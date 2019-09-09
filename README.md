@@ -1,0 +1,2 @@
+# AppIndiceAcademico
+Proyecto Tecnicas Fundamentales
