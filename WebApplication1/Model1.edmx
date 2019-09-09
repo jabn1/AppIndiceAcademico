@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Autenticacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Clave" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Salt" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Estudiantes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Carrera" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Indice" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CreditosAcc" Type="int" Nullable="false" />
+          <Property Name="Honor" Type="nvarchar" MaxLength="50" />
+          <Property Name="CantidadCal" Type="int" Nullable="false" />
+        </EntityType>
+        <Function Name="GetAuthData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Autenticacion" EntityType="Self.Autenticacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estudiantes" EntityType="Self.Estudiantes" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Autenticacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Clave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Salt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Estudiante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Carrera" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Indice" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreditosAcc" Type="Int32" Nullable="false" />
+          <Property Name="Honor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CantidadCal" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Autenticacions" EntityType="Self.Autenticacion" />
+          <EntitySet Name="Estudiantes" EntityType="Self.Estudiante" />
+          <FunctionImport Name="GetStudent" ReturnType="Collection(Database1Model.GetStudent_Result)">
+            <Parameter Name="Id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DatosAutenticacion" ReturnType="Collection(Database1Model.DatosAutenticacion_Result)">
+            <Parameter Name="Id" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetAuthData_Result">
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Clave" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Salt" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetStudent_Result">
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Carrera" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Indice" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="CreditosAcc" Nullable="false" />
+          <Property Type="String" Name="Honor" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CantidadCal" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="DatosAutenticacion_Result">
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Clave" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Salt" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+          <EntitySetMapping Name="Autenticacions">
+            <EntityTypeMapping TypeName="Database1Model.Autenticacion">
+              <MappingFragment StoreEntitySet="Autenticacion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estudiantes">
+            <EntityTypeMapping TypeName="Database1Model.Estudiante">
+              <MappingFragment StoreEntitySet="Estudiantes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Carrera" ColumnName="Carrera" />
+                <ScalarProperty Name="Indice" ColumnName="Indice" />
+                <ScalarProperty Name="CreditosAcc" ColumnName="CreditosAcc" />
+                <ScalarProperty Name="Honor" ColumnName="Honor" />
+                <ScalarProperty Name="CantidadCal" ColumnName="CantidadCal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetStudent" FunctionName="Database1Model.Store.GetStudent">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Database1Model.GetStudent_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Carrera" ColumnName="Carrera" />
+                <ScalarProperty Name="Indice" ColumnName="Indice" />
+                <ScalarProperty Name="CreditosAcc" ColumnName="CreditosAcc" />
+                <ScalarProperty Name="Honor" ColumnName="Honor" />
+                <ScalarProperty Name="CantidadCal" ColumnName="CantidadCal" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DatosAutenticacion" FunctionName="Database1Model.Store.GetAuthData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Database1Model.DatosAutenticacion_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
