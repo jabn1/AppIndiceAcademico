@@ -12,8 +12,14 @@ namespace WebApplication1
     using System;
     using System.Collections.Generic;
     
-    public partial class Estudiante
+    public partial class ListCalEst
     {
+        public int IdCal { get; set; }
+        public string IdEstudiante { get; set; }
+        public string IdProfesor { get; set; }
+        public double Valor { get; set; }
+        public string Alpha { get; set; }
+        public string ClaveAsignatura { get; set; }
         public string IdEst { get; set; }
         public string NombreEst { get; set; }
         public string Carrera { get; set; }
@@ -21,5 +27,10 @@ namespace WebApplication1
         public int CreditosAcc { get; set; }
         public string Honor { get; set; }
         public int CantidadCal { get; set; }
+        public string IdProf { get; set; }
+        public string NombreProf { get; set; }
+        public string Clave { get; set; }
+        public string NombreAsig { get; set; }
+        public int Creditos { get; set; }
     }
 }

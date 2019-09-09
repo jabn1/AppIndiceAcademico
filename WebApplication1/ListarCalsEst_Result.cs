@@ -10,16 +10,14 @@
 namespace WebApplication1
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Estudiante
+    public partial class ListarCalsEst_Result
     {
-        public string IdEst { get; set; }
-        public string NombreEst { get; set; }
-        public string Carrera { get; set; }
-        public string Indice { get; set; }
-        public int CreditosAcc { get; set; }
-        public string Honor { get; set; }
-        public int CantidadCal { get; set; }
+        public string NombreProf { get; set; }
+        public string NombreAsig { get; set; }
+        public int Creditos { get; set; }
+        public double Valor { get; set; }
+        public string Alpha { get; set; }
+        public string ClaveAsignatura { get; set; }
     }
 }

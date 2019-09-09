@@ -17,5 +17,6 @@ namespace WebApplication1
         public string Id { get; set; }
         public string Clave { get; set; }
         public string Salt { get; set; }
+        public string Role { get; set; }
     }
 }

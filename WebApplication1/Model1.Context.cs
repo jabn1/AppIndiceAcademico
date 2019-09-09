@@ -28,6 +28,10 @@ namespace WebApplication1
         }
     
         public virtual DbSet<Autenticacion> Autenticacions { get; set; }
+        public virtual DbSet<Asignatura> Asignaturas { get; set; }
+        public virtual DbSet<Calificacione> Calificaciones { get; set; }
+        public virtual DbSet<Profesore> Profesores { get; set; }
+        public virtual DbSet<ListCalEst> ListCalEsts { get; set; }
         public virtual DbSet<Estudiante> Estudiantes { get; set; }
     
         public virtual ObjectResult<GetStudent_Result> GetStudent(string id)
@@ -39,13 +43,31 @@ namespace WebApplication1
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetStudent_Result>("GetStudent", idParameter);
         }
     
-        public virtual ObjectResult<DatosAutenticacion_Result> DatosAutenticacion(string id)
+        public virtual ObjectResult<ListarCalsEst_Result> ListarCalsEst(string idEst)
+        {
+            var idEstParameter = idEst != null ?
+                new ObjectParameter("IdEst", idEst) :
+                new ObjectParameter("IdEst", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ListarCalsEst_Result>("ListarCalsEst", idEstParameter);
+        }
+    
+        public virtual ObjectResult<Autenticacion> GetAutenticacionById(string id)
         {
             var idParameter = id != null ?
                 new ObjectParameter("Id", id) :
                 new ObjectParameter("Id", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DatosAutenticacion_Result>("DatosAutenticacion", idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Autenticacion>("GetAutenticacionById", idParameter);
+        }
+    
+        public virtual ObjectResult<Autenticacion> GetAutenticacionById(string id, MergeOption mergeOption)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Autenticacion>("GetAutenticacionById", mergeOption, idParameter);
         }
     }
 }

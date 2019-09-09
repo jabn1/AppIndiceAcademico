@@ -7,30 +7,32 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication1
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class Profesores : System.Web.UI.Page
     {
-        private string Id;
         protected void Page_Load(object sender, EventArgs e)
-        {                                  
+        {
+
         }
+        private string Id;
+
         protected void Login_Authenticate(object sender, AuthenticateEventArgs e)
         {
             var entity = new Database1Entities();
-            var a = entity.GetAutenticacionById(this.Login1.UserName).ToArray();
+            var a = entity.GetAutenticacionById(this.Login2.UserName).ToArray();
             if (a.Length == 0)
             {
                 //Usuario no existe
             }
-            else if (a[0].Role == "estudiante" && this.Login1.Password == a[0].Clave)
+            else if (a[0].Role == "estudiante" && this.Login2.Password == a[0].Clave)
             {
-
-                this.Login1.Visible = false;
+                
+                this.Login2.Visible = false;
                 this.webcontentLogin.Visible = false;
                 Id = a[0].Id;
                 this.SqlDataSource1.SelectParameters["Id"].DefaultValue = Id;
                 this.SqlDataSource2.SelectParameters["IdEst"].DefaultValue = Id;
                 this.webcontentEst.Visible = true;
-                
+
             }
             else
             {
@@ -50,5 +52,4 @@ namespace WebApplication1
             this.webcontentListCal.Visible = true;
         }
     }
-
 }

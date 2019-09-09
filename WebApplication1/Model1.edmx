@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Asignaturas">
+          <Key>
+            <PropertyRef Name="Clave" />
+          </Key>
+          <Property Name="Clave" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreAsig" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Creditos" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Autenticacion">
           <Key>
             <PropertyRef Name="Id" />
@@ -12,18 +20,79 @@
           <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Clave" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Salt" Type="nvarchar" MaxLength="50" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Calificaciones">
+          <Key>
+            <PropertyRef Name="IdCal" />
+          </Key>
+          <Property Name="IdCal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEstudiante" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdProfesor" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Valor" Type="float" Nullable="false" />
+          <Property Name="Alpha" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="ClaveAsignatura" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Estudiantes">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdEst" />
           </Key>
-          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdEst" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreEst" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Carrera" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Indice" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="CreditosAcc" Type="int" Nullable="false" />
-          <Property Name="Honor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Honor" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="CantidadCal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profesores">
+          <Key>
+            <PropertyRef Name="IdProf" />
+          </Key>
+          <Property Name="IdProf" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreProf" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\JOSE\DESKTOP\ONEDRIVE - INTEC\C# TEST\AIA\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF.dbo.ListCalEst' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ListCalEst">
+          <Key>
+            <PropertyRef Name="IdCal" />
+            <PropertyRef Name="IdEstudiante" />
+            <PropertyRef Name="IdProfesor" />
+            <PropertyRef Name="Valor" />
+            <PropertyRef Name="Alpha" />
+            <PropertyRef Name="ClaveAsignatura" />
+            <PropertyRef Name="IdEst" />
+            <PropertyRef Name="NombreEst" />
+            <PropertyRef Name="Carrera" />
+            <PropertyRef Name="Indice" />
+            <PropertyRef Name="CreditosAcc" />
+            <PropertyRef Name="Honor" />
+            <PropertyRef Name="CantidadCal" />
+            <PropertyRef Name="IdProf" />
+            <PropertyRef Name="NombreProf" />
+            <PropertyRef Name="Clave" />
+            <PropertyRef Name="NombreAsig" />
+            <PropertyRef Name="Creditos" />
+          </Key>
+          <Property Name="IdCal" Type="int" Nullable="false" />
+          <Property Name="IdEstudiante" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdProfesor" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Valor" Type="float" Nullable="false" />
+          <Property Name="Alpha" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="ClaveAsignatura" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdEst" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreEst" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Carrera" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Indice" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CreditosAcc" Type="int" Nullable="false" />
+          <Property Name="Honor" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CantidadCal" Type="int" Nullable="false" />
+          <Property Name="IdProf" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreProf" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Clave" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreAsig" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Creditos" Type="int" Nullable="false" />
         </EntityType>
         <Function Name="GetAuthData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Id" Type="nvarchar" Mode="In" />
@@ -31,9 +100,37 @@
         <Function Name="GetStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Id" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="ListarCalsEst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdEst" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Asignaturas" EntityType="Self.Asignaturas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Autenticacion" EntityType="Self.Autenticacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Calificaciones" EntityType="Self.Calificaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estudiantes" EntityType="Self.Estudiantes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profesores" EntityType="Self.Profesores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListCalEst" EntityType="Self.ListCalEst" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ListCalEst].[IdCal] AS [IdCal], 
+    [ListCalEst].[IdEstudiante] AS [IdEstudiante], 
+    [ListCalEst].[IdProfesor] AS [IdProfesor], 
+    [ListCalEst].[Valor] AS [Valor], 
+    [ListCalEst].[Alpha] AS [Alpha], 
+    [ListCalEst].[ClaveAsignatura] AS [ClaveAsignatura], 
+    [ListCalEst].[IdEst] AS [IdEst], 
+    [ListCalEst].[NombreEst] AS [NombreEst], 
+    [ListCalEst].[Carrera] AS [Carrera], 
+    [ListCalEst].[Indice] AS [Indice], 
+    [ListCalEst].[CreditosAcc] AS [CreditosAcc], 
+    [ListCalEst].[Honor] AS [Honor], 
+    [ListCalEst].[CantidadCal] AS [CantidadCal], 
+    [ListCalEst].[IdProf] AS [IdProf], 
+    [ListCalEst].[NombreProf] AS [NombreProf], 
+    [ListCalEst].[Clave] AS [Clave], 
+    [ListCalEst].[NombreAsig] AS [NombreAsig], 
+    [ListCalEst].[Creditos] AS [Creditos]
+    FROM [dbo].[ListCalEst] AS [ListCalEst]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -46,26 +143,22 @@
           <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Clave" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Salt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Estudiante">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Carrera" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Indice" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CreditosAcc" Type="Int32" Nullable="false" />
-          <Property Name="Honor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CantidadCal" Type="Int32" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Autenticacions" EntityType="Self.Autenticacion" />
-          <EntitySet Name="Estudiantes" EntityType="Self.Estudiante" />
           <FunctionImport Name="GetStudent" ReturnType="Collection(Database1Model.GetStudent_Result)">
-            <Parameter Name="Id" Mode="In" Type="String" />
+          <Parameter Name="Id" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="DatosAutenticacion" ReturnType="Collection(Database1Model.DatosAutenticacion_Result)">
+          <EntitySet Name="Asignaturas" EntityType="Database1Model.Asignatura" />
+          <EntitySet Name="Calificaciones" EntityType="Database1Model.Calificacione" />
+          <EntitySet Name="Profesores" EntityType="Database1Model.Profesore" />
+          <EntitySet Name="ListCalEsts" EntityType="Database1Model.ListCalEst" />
+          <FunctionImport Name="ListarCalsEst" ReturnType="Collection(Database1Model.ListarCalsEst_Result)">
+          <Parameter Name="IdEst" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Estudiantes" EntityType="Database1Model.Estudiante" />
+          <FunctionImport Name="GetAutenticacionById" EntitySet="Autenticacions" ReturnType="Collection(Database1Model.Autenticacion)">
             <Parameter Name="Id" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
@@ -88,6 +181,92 @@
           <Property Type="String" Name="Clave" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Salt" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <EntityType Name="Asignatura">
+          <Key>
+            <PropertyRef Name="Clave" />
+          </Key>
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NombreAsig" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Creditos" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Calificacione">
+          <Key>
+            <PropertyRef Name="IdCal" />
+          </Key>
+          <Property Name="IdCal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEstudiante" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdProfesor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Valor" Type="Double" Nullable="false" />
+          <Property Name="Alpha" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ClaveAsignatura" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Profesore">
+          <Key>
+            <PropertyRef Name="IdProf" />
+          </Key>
+          <Property Name="IdProf" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NombreProf" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ListCalEst">
+          <Key>
+            <PropertyRef Name="IdCal" />
+            <PropertyRef Name="IdEstudiante" />
+            <PropertyRef Name="IdProfesor" />
+            <PropertyRef Name="Valor" />
+            <PropertyRef Name="Alpha" />
+            <PropertyRef Name="ClaveAsignatura" />
+            <PropertyRef Name="IdEst" />
+            <PropertyRef Name="NombreEst" />
+            <PropertyRef Name="Carrera" />
+            <PropertyRef Name="Indice" />
+            <PropertyRef Name="CreditosAcc" />
+            <PropertyRef Name="Honor" />
+            <PropertyRef Name="CantidadCal" />
+            <PropertyRef Name="IdProf" />
+            <PropertyRef Name="NombreProf" />
+            <PropertyRef Name="Clave" />
+            <PropertyRef Name="NombreAsig" />
+            <PropertyRef Name="Creditos" />
+          </Key>
+          <Property Name="IdCal" Type="Int32" Nullable="false" />
+          <Property Name="IdEstudiante" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdProfesor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Valor" Type="Double" Nullable="false" />
+          <Property Name="Alpha" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ClaveAsignatura" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdEst" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NombreEst" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Carrera" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Indice" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreditosAcc" Type="Int32" Nullable="false" />
+          <Property Name="Honor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CantidadCal" Type="Int32" Nullable="false" />
+          <Property Name="IdProf" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NombreProf" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NombreAsig" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Creditos" Type="Int32" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="ListarCalsEst_Result">
+          <Property Type="String" Name="NombreProf" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="NombreAsig" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Creditos" Nullable="false" />
+          <Property Type="Double" Name="Valor" Nullable="false" />
+          <Property Type="String" Name="Alpha" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="ClaveAsignatura" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="Estudiante">
+          <Key>
+            <PropertyRef Name="IdEst" />
+          </Key>
+          <Property Name="IdEst" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NombreEst" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Carrera" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Indice" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreditosAcc" Type="Int32" Nullable="false" />
+          <Property Name="Honor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CantidadCal" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -97,22 +276,10 @@
           <EntitySetMapping Name="Autenticacions">
             <EntityTypeMapping TypeName="Database1Model.Autenticacion">
               <MappingFragment StoreEntitySet="Autenticacion">
+                <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Clave" ColumnName="Clave" />
                 <ScalarProperty Name="Salt" ColumnName="Salt" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Estudiantes">
-            <EntityTypeMapping TypeName="Database1Model.Estudiante">
-              <MappingFragment StoreEntitySet="Estudiantes">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Carrera" ColumnName="Carrera" />
-                <ScalarProperty Name="Indice" ColumnName="Indice" />
-                <ScalarProperty Name="CreditosAcc" ColumnName="CreditosAcc" />
-                <ScalarProperty Name="Honor" ColumnName="Honor" />
-                <ScalarProperty Name="CantidadCal" ColumnName="CantidadCal" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -129,15 +296,85 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="DatosAutenticacion" FunctionName="Database1Model.Store.GetAuthData">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Database1Model.DatosAutenticacion_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="Asignaturas">
+            <EntityTypeMapping TypeName="Database1Model.Asignatura">
+              <MappingFragment StoreEntitySet="Asignaturas">
+                <ScalarProperty Name="Creditos" ColumnName="Creditos" />
+                <ScalarProperty Name="NombreAsig" ColumnName="NombreAsig" />
                 <ScalarProperty Name="Clave" ColumnName="Clave" />
-                <ScalarProperty Name="Salt" ColumnName="Salt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Calificaciones">
+            <EntityTypeMapping TypeName="Database1Model.Calificacione">
+              <MappingFragment StoreEntitySet="Calificaciones">
+                <ScalarProperty Name="ClaveAsignatura" ColumnName="ClaveAsignatura" />
+                <ScalarProperty Name="Alpha" ColumnName="Alpha" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="IdProfesor" ColumnName="IdProfesor" />
+                <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+                <ScalarProperty Name="IdCal" ColumnName="IdCal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profesores">
+            <EntityTypeMapping TypeName="Database1Model.Profesore">
+              <MappingFragment StoreEntitySet="Profesores">
+                <ScalarProperty Name="NombreProf" ColumnName="NombreProf" />
+                <ScalarProperty Name="IdProf" ColumnName="IdProf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListCalEsts">
+            <EntityTypeMapping TypeName="Database1Model.ListCalEst">
+              <MappingFragment StoreEntitySet="ListCalEst">
+                <ScalarProperty Name="Creditos" ColumnName="Creditos" />
+                <ScalarProperty Name="NombreAsig" ColumnName="NombreAsig" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="NombreProf" ColumnName="NombreProf" />
+                <ScalarProperty Name="IdProf" ColumnName="IdProf" />
+                <ScalarProperty Name="CantidadCal" ColumnName="CantidadCal" />
+                <ScalarProperty Name="Honor" ColumnName="Honor" />
+                <ScalarProperty Name="CreditosAcc" ColumnName="CreditosAcc" />
+                <ScalarProperty Name="Indice" ColumnName="Indice" />
+                <ScalarProperty Name="Carrera" ColumnName="Carrera" />
+                <ScalarProperty Name="NombreEst" ColumnName="NombreEst" />
+                <ScalarProperty Name="IdEst" ColumnName="IdEst" />
+                <ScalarProperty Name="ClaveAsignatura" ColumnName="ClaveAsignatura" />
+                <ScalarProperty Name="Alpha" ColumnName="Alpha" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="IdProfesor" ColumnName="IdProfesor" />
+                <ScalarProperty Name="IdEstudiante" ColumnName="IdEstudiante" />
+                <ScalarProperty Name="IdCal" ColumnName="IdCal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ListarCalsEst" FunctionName="Database1Model.Store.ListarCalsEst">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Database1Model.ListarCalsEst_Result">
+                <ScalarProperty Name="NombreProf" ColumnName="NombreProf" />
+                <ScalarProperty Name="NombreAsig" ColumnName="NombreAsig" />
+                <ScalarProperty Name="Creditos" ColumnName="Creditos" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Alpha" ColumnName="Alpha" />
+                <ScalarProperty Name="ClaveAsignatura" ColumnName="ClaveAsignatura" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="Estudiantes">
+            <EntityTypeMapping TypeName="Database1Model.Estudiante">
+              <MappingFragment StoreEntitySet="Estudiantes">
+                <ScalarProperty Name="CantidadCal" ColumnName="CantidadCal" />
+                <ScalarProperty Name="Honor" ColumnName="Honor" />
+                <ScalarProperty Name="CreditosAcc" ColumnName="CreditosAcc" />
+                <ScalarProperty Name="Indice" ColumnName="Indice" />
+                <ScalarProperty Name="Carrera" ColumnName="Carrera" />
+                <ScalarProperty Name="NombreEst" ColumnName="NombreEst" />
+                <ScalarProperty Name="IdEst" ColumnName="IdEst" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetAutenticacionById" FunctionName="Database1Model.Store.GetAuthData" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
