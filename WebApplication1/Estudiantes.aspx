@@ -1,11 +1,18 @@
 ﻿<%@ Page Title="Estudiantes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Estudiantes.aspx.cs" Inherits="WebApplication1.WebForm2" %>
+
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
 <div id="webcontentEst" runat="server" visible="false">
 
 <%--<div  <%--style="width:50%; margin: 0 auto;"--%>
+    <div style="text-align: right; width: 100%;">
+        <asp:Button ID="btLogout" runat="server" Text="Cerrar Sesion" OnClick="btLogout_Click" />
+    </div>
     <h3>Portal de Estudiantes</h3>
+    
     <div>
+        
         <asp:Button ID="Button1" runat="server" Text="Listado de calificaciones" Width="210px" OnClick="Button1_Click" />
     </div>
     <div style="height: 30px; width: 1451px;">&nbsp;&nbsp;</div>
@@ -55,7 +62,7 @@
     </div>
          
 </div>
-<div id="webcontentListCal" runat="server" visible="false">
+<%--<div id="webcontentListCal" runat="server" visible="false">
     
 
     <asp:Button ID="Button3" runat="server" Text="Volver" OnClick="Button3_Click" />
@@ -109,5 +116,15 @@
         <HeaderStyle HorizontalAlign="Center" Wrap="True" />
         <RowStyle HorizontalAlign="Center" />
     </asp:GridView>
+    </div>--%>
+
+    <div id="reportViewerWC" runat="server" visible="false">
+        <asp:Button ID="Button3" runat="server" Text="Volver" OnClick="Button3_Click" />
+        <p>
+
+        </p>
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" ClientIDMode="AutoID" Width="90%" Height="700px" Visible="True">
+        </rsweb:ReportViewer>
     </div>
+
 </asp:Content>

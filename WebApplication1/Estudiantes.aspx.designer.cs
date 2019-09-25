@@ -22,6 +22,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl webcontentEst;
         
         /// <summary>
+        /// btLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btLogout;
+        
+        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Login Login1;
         
         /// <summary>
-        /// webcontentListCal control.
+        /// reportViewerWC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl webcontentListCal;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl reportViewerWC;
         
         /// <summary>
         /// Button3 control.
@@ -94,21 +103,12 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
-        /// SqlDataSource2 control.
+        /// ReportViewer1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-        
-        /// <summary>
-        /// GridView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
     }
 }

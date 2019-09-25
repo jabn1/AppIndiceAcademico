@@ -13,5 +13,9 @@ namespace WebApplication1
         {
 
         }
+        protected void Estudiante_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Estudiantes",false);
+        }
     }
 }
