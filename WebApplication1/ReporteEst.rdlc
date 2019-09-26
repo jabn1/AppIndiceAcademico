@@ -716,7 +716,6 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>EstRepDS</DataSetName>
-        <Top>0in</Top>
         <Height>0.5in</Height>
         <Width>9.19792in</Width>
         <Style>
@@ -785,6 +784,23 @@
               </TextRuns>
               <Style />
             </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Carrera: </Value>
+                  <Style>
+                    <FontSize>14pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Fields!Carrera.Value</Value>
+                  <Style>
+                    <FontSize>14pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox13</rd:DefaultName>
           <Top>0.47917in</Top>
@@ -807,7 +823,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Cantidad de calificaicones: </Value>
+                  <Value>Cantidad de calificaciones: </Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                   </Style>

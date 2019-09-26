@@ -16,10 +16,6 @@
         <asp:Button ID="Button1" runat="server" Text="Listado de calificaciones" Width="210px" OnClick="Button1_Click" />
     </div>
     <div style="height: 30px; width: 1451px;">&nbsp;&nbsp;</div>
-    <div>
-        <asp:Button ID="Button2" runat="server" Text="Descargar Reporte" Width="210px" />
-        <p></p>
-    </div>
     
         <asp:DataList ID="DataList1" runat="server" DataKeyField="IdEst" DataSourceID="SqlDataSource1" RepeatDirection="Horizontal" RepeatLayout="Flow" >
             <ItemTemplate>

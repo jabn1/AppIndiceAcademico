@@ -107,7 +107,7 @@ namespace WebApplication1
         protected void btConfirmar1_Click(object sender, EventArgs e)
         {
             InsertCal((int)ViewState["valorCal"]);
-            //DataUpdate.UpdateDatosEstudiante(RadioButtonList2.SelectedValue);
+            DataUpdate.UpdateDatosEstudiante(RadioButtonList2.SelectedValue);
             Response.Redirect("Profesores");
         }
 
