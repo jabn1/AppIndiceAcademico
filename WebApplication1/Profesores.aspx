@@ -11,7 +11,6 @@
     </div>
          
 </div>
-
 <div id="webcontentProfesor" runat="server" visible="false">
     <div style="text-align: right; width: 100%;">
         <asp:Button ID="btLogout" runat="server" Text="Cerrar Sesion" OnClick="btLogout_Click" />

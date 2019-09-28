@@ -53,6 +53,7 @@
                         <%--<li><a runat="server" onserverclick="Estudiante_Click" >Estudiantes</a></li>--%>
                         <li><a runat="server"  href="~/Estudiantes">Estudiantes</a></li>
                         <li><a runat="server" href="~/Profesores">Profesores</a></li>
+                        <li><a runat="server" href="~/Atministradores">Atministradores</a></li>
                         <%--<li><a runat="server" href="~/Contact">Contacto</a></li>--%>
                     </ul>
                 </div>
