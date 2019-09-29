@@ -31,13 +31,22 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Login Login1;
         
         /// <summary>
-        /// webcontentAtmin control.
+        /// webcontentAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl webcontentAtmin;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl webcontentAdmin;
+        
+        /// <summary>
+        /// btLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btLogout;
         
         /// <summary>
         /// btnEditar control.
@@ -49,30 +58,21 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button btnEditar;
         
         /// <summary>
-        /// datosAtmin control.
+        /// nomAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl datosAtmin;
+        protected global::System.Web.UI.WebControls.Label nomAdmin;
         
         /// <summary>
-        /// nomAtmin control.
+        /// idAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nomAtmin;
-        
-        /// <summary>
-        /// idAtmin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label idAtmin;
+        protected global::System.Web.UI.WebControls.Label idAdmin;
     }
 }

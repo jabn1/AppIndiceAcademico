@@ -16,7 +16,7 @@
 <div id="wcElegirEst" runat="server" visible="false">
         <h3>Agregar Calificacion</h3>
         <asp:Label ID="lblAsig" runat="server"></asp:Label>
-        <h4>Elegir la estudiante:</h4> 
+        <h4>Elegir el estudiante:</h4> 
         <asp:RadioButtonList ID="RadioButtonList2" runat="server"></asp:RadioButtonList> <p></p>
         <asp:Button ID="btElegirEst" runat="server" Text="Elegir Estudiante" OnClick="btElegirEst_Click" Width="200px" /> <p></p>
     <asp:Button ID="btRetAsig" runat="server" Text="Modificar asignatura" OnClick="btRetAsig_Click" Width="200px" /> <p></p>

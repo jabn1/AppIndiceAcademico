@@ -18,7 +18,8 @@ namespace WebApplication1
             int cantidadCalificacion = 0;
 
             ListCalEstTableAdapter listCalEst = new ListCalEstTableAdapter();
-            var calificaciones = listCalEst.GetDataByID(idEstudiante).Rows;
+            ListCalEstDataTable listCalEstRows = new ListCalEstDataTable();
+            var calificaciones =  listCalEstRows.Rows;
             cantidadCalificacion = calificaciones.Count;
 
             foreach (ListCalEstRow calificacion in calificaciones)

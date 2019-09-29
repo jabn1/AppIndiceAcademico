@@ -127,7 +127,7 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
-    <Content Include="Atministradores.aspx" />
+    <Content Include="Administradores.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -222,12 +222,12 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Atministradores.aspx.cs">
-      <DependentUpon>Atministradores.aspx</DependentUpon>
+    <Compile Include="Administradores.aspx.cs">
+      <DependentUpon>Administradores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Atministradores.aspx.designer.cs">
-      <DependentUpon>Atministradores.aspx</DependentUpon>
+    <Compile Include="Administradores.aspx.designer.cs">
+      <DependentUpon>Administradores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>

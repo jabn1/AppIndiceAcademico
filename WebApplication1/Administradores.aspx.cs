@@ -15,13 +15,12 @@ namespace WebApplication1
         {
             if (!IsPostBack)
             {
-                if (Session["IdAtmin"] != null)
+                if (Session["IdAdmin"] != null)
                 {
                     this.webcontentLogin.Visible = false;
-                    this.idAtmin.Text = Session["IdAtmin"].ToString();
-                    this.nomAtmin.Text = Session["NomAtmin"].ToString();
-                    this.datosAtmin.Visible = true;
-                    this.webcontentAtmin.Visible = true;
+                    this.idAdmin.Text = Session["IdAdmin"].ToString();
+                    this.nomAdmin.Text = Session["NomAdmin"].ToString();
+                    this.webcontentAdmin.Visible = true;
                 }
             }
         }
@@ -34,19 +33,18 @@ namespace WebApplication1
             if (datosAuth.Rows.Count == 1)
             {
                 var datosUsuario = (AutenticacionRow)datosAuth.Rows[0];
-                if (datosUsuario["Role"].ToString() == "atministrador" && datosUsuario["Clave"].ToString() == this.Login1.Password)
+                if (datosUsuario["Role"].ToString() == "administrador" && datosUsuario["Clave"].ToString() == this.Login1.Password)
                 {
                     this.webcontentLogin.Visible = false;
 
-                    Session["IdAtmin"] = datosUsuario["Id"].ToString();
-                    Session["Role"] = "atministrador";
+                    Session["IdAdmin"] = datosUsuario["Id"].ToString();
+                    Session["Role"] = "administrador";
                     AtministradoresTableAdapter atministradoresTableAdapter = new AtministradoresTableAdapter();
-                    Session["NomAtmin"] = atministradoresTableAdapter.GetAtminName(Session["IdAtmin"].ToString());
+                    Session["NomAdmin"] = atministradoresTableAdapter.GetAdminName(Session["IdAdmin"].ToString());
 
-                    this.datosAtmin.Visible = true;
-                    this.idAtmin.Text = Session["IdAtmin"].ToString();
-                    this.nomAtmin.Text = Session["NomAtmin"].ToString();
-                    this.webcontentAtmin.Visible = true;
+                    this.idAdmin.Text = Session["IdAdmin"].ToString();
+                    this.nomAdmin.Text = Session["NomAdmin"].ToString();
+                    this.webcontentAdmin.Visible = true;
                 }               
             }      
         }
@@ -54,6 +52,12 @@ namespace WebApplication1
         protected void btnEditar_Click(object sender, EventArgs e)
         {
             Response.Redirect("EditarEntidades");
+        }
+
+        protected void btLogout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Default");
         }
     }
 }

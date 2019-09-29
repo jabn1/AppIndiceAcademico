@@ -2,7 +2,7 @@
 
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div id="webcontentLogin" runat="server" visible="true">
+<div id="webcontentLogin" runat="server" visible="true">
     <h3>Portal de acceso Indice Academico para profesores</h3>
     
     <div>
