@@ -544,6 +544,69 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button btnEditarAsignatura;
         
         /// <summary>
+        /// lblWarnAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWarnAsig;
+        
+        /// <summary>
+        /// ElegirCambioAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ElegirCambioAsig;
+        
+        /// <summary>
+        /// btnVolverElegirAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolverElegirAsig;
+        
+        /// <summary>
+        /// lblElegirDatosa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblElegirDatosa;
+        
+        /// <summary>
+        /// CheckBoxListAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListAsig;
+        
+        /// <summary>
+        /// btnContinuarAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnContinuarAsig;
+        
+        /// <summary>
+        /// lblWarnrada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWarnrada;
+        
+        /// <summary>
         /// CambiarAsignatura control.
         /// </summary>
         /// <remarks>
@@ -571,6 +634,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label lblAsignatura;
         
         /// <summary>
+        /// nombreasig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombreasig;
+        
+        /// <summary>
         /// txtNombreAsignatura control.
         /// </summary>
         /// <remarks>
@@ -580,13 +652,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox txtNombreAsignatura;
         
         /// <summary>
-        /// CambioClave control.
+        /// claveasig control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CambioClave;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl claveasig;
         
         /// <summary>
         /// txtClave control.
@@ -598,13 +670,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox txtClave;
         
         /// <summary>
-        /// CambioCreditos control.
+        /// creditoasig control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CambioCreditos;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl creditoasig;
         
         /// <summary>
         /// txtCreditosAsignatura control.
@@ -623,5 +695,68 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnModificarAsignatura;
+        
+        /// <summary>
+        /// lblWarnTxt2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWarnTxt2;
+        
+        /// <summary>
+        /// ConfirmarAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ConfirmarAsig;
+        
+        /// <summary>
+        /// lblConfirmarNombreAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConfirmarNombreAsig;
+        
+        /// <summary>
+        /// lblConfirmarClaveAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConfirmarClaveAsig;
+        
+        /// <summary>
+        /// lblConfirmarCreditosAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConfirmarCreditosAsig;
+        
+        /// <summary>
+        /// btnConfirmarAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConfirmarAsig;
+        
+        /// <summary>
+        /// btnCancelarAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelarAsig;
     }
 }

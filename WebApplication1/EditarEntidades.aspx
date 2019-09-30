@@ -34,7 +34,7 @@
       
 </div>
 <div id="ElegirCambioEst" runat="server" visible="false">
-        <div style="text-align: right; width: 100%;">
+        <div style="text-align: right; " class="nav-justified">
         <asp:Button ID="btnVolverElegirEst" runat="server" Text="Volver" OnClick="btnVolverElegirEst_Click" />
     </div>
         <h3>
@@ -129,13 +129,11 @@
         </h3>
         <p></p>
         <h4 id="nombreprof" runat="server" visible="false">Nombre: 
-            <asp:TextBox ID="txtNombreProfesor" runat="server" style="margin-top: 2"></asp:TextBox>
+            <asp:TextBox ID="txtNombreProfesor" runat="server"></asp:TextBox>
         </h4>
-    <div id="idprof" runat="server" visible="true">
-        <h4>ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+        <h4 id="idprof" runat="server" visible="true">ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
             <asp:TextBox ID="txtIDProfesor" runat="server"></asp:TextBox>
         </h4> 
-    </div> 
         <p>
         <asp:Button ID="btnModificarProfesor" runat="server" Text="Modificar" OnClick="btnModificarProfesor_Click" />
     <asp:Label ID="lblWarnTxt1" runat="server" style="color: #FF0000" Text="Llene los campos requeridos" Visible="False"></asp:Label>
@@ -168,8 +166,24 @@
 
     <p></p>
     <asp:Button ID="btnEditarAsignatura" runat="server" Text="Editar" OnClick="btnEditarAsignatura_Click" />
-      
+      <asp:Label ID="lblWarnAsig" runat="server" style="color: #FF0000" Text="Seleccione una asignatura" Visible="False"></asp:Label>
 </div>
+<div id="ElegirCambioAsig" runat="server" visible="false">
+        <div style="text-align: right; " class="nav-justified">
+        <asp:Button ID="btnVolverElegirAsig" runat="server" Text="Volver" OnClick="btnVolverElegirAsig_Click" />
+    </div>
+        <h3>
+            <asp:Label ID="lblElegirDatosa" runat="server" Text=""></asp:Label>
+        </h3>
+        <p>
+            <asp:CheckBoxList ID="CheckBoxListAsig" runat="server"></asp:CheckBoxList>
+        </p>
+        <p></p>
+        <asp:Button ID="btnContinuarAsig" runat="server" Text="Continuar" OnClick="btnContinuarAsig_Click" />
+      
+        <asp:Label ID="lblWarnrada" runat="server" style="color: #FF0000" Text="Seleccione los datos a editar" Visible="False"></asp:Label>
+      
+    </div>
 <div id="CambiarAsignatura" runat="server" visible="false">
         <div style="text-align: right; width: 100%;">
         <asp:Button ID="btnVolverCambioAsignatura" runat="server" Text="Volver" OnClick="btnVolverCambioAsignatura_Click" style="height: 26px" />
@@ -178,22 +192,38 @@
             <asp:Label ID="lblAsignatura" runat="server" Text=""></asp:Label>
         </h3>
         <p></p>
-        <h4>Nombre:&nbsp; 
+        <h4 id="nombreasig" runat="server" visible="false">Nombre:&nbsp; 
             <asp:TextBox ID="txtNombreAsignatura" runat="server"></asp:TextBox>
         </h4>
-    <div id="CambioClave" runat="server" visible="true">
-        <h4>Clave:&nbsp;&nbsp;&nbsp;&nbsp;     
+    <h4 id="claveasig" runat="server" visible="false">
+        Clave:&nbsp;&nbsp;&nbsp;&nbsp;     
             <asp:TextBox ID="txtClave" runat="server"></asp:TextBox>
-        </h4>
-</div>
-    <div id="CambioCreditos" runat="server" visible="true">
-    <h4>Creditos:     
+</h4>
+    <h4 id="creditoasig" runat="server" visible="false">
+    Creditos:     
             <asp:TextBox ID="txtCreditosAsignatura" runat="server"></asp:TextBox>
-        </h4>
-
-    </div>
+    </h4>
         <p>
         <asp:Button ID="btnModificarAsignatura" runat="server" Text="Modificar" OnClick="btnModificarAsignatura_Click" />
-    </p>
+   <asp:Label ID="lblWarnTxt2" runat="server" style="color: #FF0000" Text="Llene los campos requeridos" Visible="False"></asp:Label>
+            </p>
+    </div>
+<div id="ConfirmarAsig" runat="server" visible="false">
+        <h3>Seguro que desea cambiar los siguientes datos de la asignatura?</h3>
+        <p></p>
+    <p></p>
+        <h4>
+<asp:Label ID="lblConfirmarNombreAsig" runat="server" Text=""></asp:Label>
+        </h4>
+    <h4>
+<asp:Label ID="lblConfirmarClaveAsig" runat="server" Text=""></asp:Label>       
+    </h4>
+    <h4>
+<asp:Label ID="lblConfirmarCreditosAsig" runat="server" Text=""></asp:Label>       
+    </h4>
+    <p></p>
+<asp:Button ID="btnConfirmarAsig" runat="server" Text="Confirmar y volver al menu principal" OnClick="btnConfirmarAsig_Click" />
+    <p></p>
+        <asp:Button ID="btnCancelarAsig" runat="server" Text="Volver a editar" OnClick="btnCancelarAsig_Click" />
     </div>
 </asp:Content>
