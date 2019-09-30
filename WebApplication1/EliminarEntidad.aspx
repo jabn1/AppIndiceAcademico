@@ -22,7 +22,7 @@
         <asp:Button ID="regresar1" runat="server" Text="regresar" OnClick="regresar_Click" />
         
         
-        <asp:Button ID="EliminarEst" runat="server" Text="Eliminar" OnClick="EliminarEst_Click" />
+        <asp:Button ID="EliminarEst" runat="server" Text="Eliminar" OnClick="TryEliminarEst_Click" />
         
         
     </div>
@@ -37,8 +37,7 @@
         <br />
         <asp:Button ID="regresar2" runat="server" Text="regresar" OnClick="regresar_Click" />
         
-        <asp:Button ID="EliminarProf" runat="server" Text="Eliminar" OnClick="EliminarProf_Click" />
-        
+        <asp:Button ID="EliminarProf" runat="server" Text="Eliminar" OnClick="TryEliminarProf_Click" />     
     </div>
 
     <div id="divAsig" runat="server" visible="false">
@@ -51,7 +50,37 @@
         <br />
         <asp:Button ID="regresar3" runat="server" Text="regresar" OnClick="regresar_Click" />
         
-        <asp:Button ID="EliminarAsig" runat="server" Text="Eliminar" OnClick="EliminarAsig_Click" />
+        <asp:Button ID="EliminarAsig" runat="server" Text="Eliminar" OnClick="TryEliminarAsig_Click" />
+        
+    </div>
+    <div id="divConfEst" runat="server" visible="false">
+        <h3>Eliminar: </h3>
+        <h4>Estudiante</h4>
+        <p></p>
+        <asp:Label ID="Label4" runat="server"></asp:Label>
+        <br />
+        <asp:Button ID="Button4" runat="server" Text="regresar" OnClick="regresar_Click" />
+        <asp:Button ID="Button5" runat="server" Text="Confirmar" OnClick="EliminarEst_Click" />
+        
+    </div>
+    <div id="divConfProf" runat="server" visible="false">
+        <h3>Eliminar: </h3>
+        <h4>Profesor</h4>
+        <p></p>
+        <asp:Label ID="Label5" runat="server"></asp:Label>
+        <br />
+        <asp:Button ID="Button6" runat="server" Text="regresar" OnClick="regresar_Click" />
+        <asp:Button ID="Button7" runat="server" Text="Confirmar" OnClick="EliminarProf_Click" />
+        
+    </div>
+    <div id="divConfAsig" runat="server" visible="false">
+        <h3>Eliminar: </h3>
+        <h4>Asignatura</h4>
+        <p></p>
+        <asp:Label ID="Label6" runat="server"></asp:Label>
+        <br />
+        <asp:Button ID="Button8" runat="server" Text="regresar" OnClick="regresar_Click" />
+        <asp:Button ID="Button9" runat="server" Text="Confirmar" OnClick="EliminarAsig_Click" />
         
     </div>
 
