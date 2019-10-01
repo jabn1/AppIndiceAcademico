@@ -9,7 +9,8 @@
     <div style="text-align: right; width: 100%;">
         <asp:Button ID="btLogout" runat="server" Text="Cerrar Sesion" OnClick="btLogout_Click" />
     </div>
-    <h3>Portal de Estudiantes</h3>    
+    <h3>Portal de Estudiantes</h3>
+    
     <div>
         
         <asp:Button ID="Button1" runat="server" Text="Listado de calificaciones" Width="210px" OnClick="Button1_Click" />
@@ -42,7 +43,7 @@
                 <br />
             </ItemTemplate>
         </asp:DataList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="GetStudent" SelectCommandType="StoredProcedure" OnSelecting="SqlDataSource1_Selecting">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="GetStudent" SelectCommandType="StoredProcedure">
         <SelectParameters>
             <asp:Parameter Name="Id" Type="String" />
         </SelectParameters>
@@ -50,12 +51,70 @@
         </div>
 <div id="webcontentLogin" runat="server" visible="true">
     <h3>Portal de acceso Indice Academico para estudiantes</h3>
+    
     <div>
         <asp:Login ID="Login1" runat="server" LoginButtonText="Entrar" PasswordLabelText="Clave:" TitleText="Iniciar Sesion:" UserNameLabelText="Usuario:" DisplayRememberMe="False" FailureText="No pudo acceder. Intente de nuevo." Height="119px" Width="151px" OnAuthenticate="Login_Authenticate">
     </asp:Login>
-    </div>        
+    </div>
+         
 </div>
-<div id="reportViewerWC" runat="server" visible="false">
+<%--<div id="webcontentListCal" runat="server" visible="false">
+    
+
+    <asp:Button ID="Button3" runat="server" Text="Volver" OnClick="Button3_Click" />
+    <p></p>
+    <h3>Listado de Calificaciones:</h3> <p></p>
+    <asp:SqlDataSource ID="SqlDataSource2"  runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="ListarCalsEst" SelectCommandType="StoredProcedure">
+        <SelectParameters>
+            <asp:Parameter Name="IdEst" Type="String" />
+        </SelectParameters>       
+    </asp:SqlDataSource>
+    <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource2" AutoGenerateColumns="False" Width="664px" >
+    <Columns>
+                        <asp:TemplateField HeaderText="Clave">
+                            <ItemTemplate>
+                                <asp:Label ID="Label1" runat="server"
+                                    Text='<%# Eval("ClaveAsignatura") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Asignatura">
+                            <ItemTemplate>
+                                <asp:Label ID="Label2" runat="server"
+                                    Text='<%# Eval("NombreAsig") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Creditos">
+                            <ItemTemplate>
+                                <asp:Label ID="Label5" runat="server"
+                                    Text='<%# Eval("Creditos") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Profesor">
+                            <ItemTemplate>
+                                <asp:Label ID="Label3" runat="server"
+                                    Text='<%# Eval("NombreProf") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Valor">
+                            <ItemTemplate>
+                                <asp:Label ID="Label4" runat="server"
+                                    Text='<%# Eval("Valor") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Calificacion">
+                            <ItemTemplate>
+                                <asp:Label ID="Label5" runat="server"
+                                    Text='<%# Eval("Alpha") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                    </Columns>
+        <HeaderStyle HorizontalAlign="Center" Wrap="True" />
+        <RowStyle HorizontalAlign="Center" />
+    </asp:GridView>
+    </div>--%>
+
+    <div id="reportViewerWC" runat="server" visible="false">
         <asp:Button ID="Button3" runat="server" Text="Volver" OnClick="Button3_Click" />
         <p>
 

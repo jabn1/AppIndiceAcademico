@@ -25,6 +25,10 @@ namespace WebApplication1
                     
                     
                     this.SqlDataSource1.SelectParameters["Id"].DefaultValue = Session["IdEst"].ToString();
+                    //this.SqlDataSource2.SelectParameters["IdEst"].DefaultValue = Id;
+
+
+
                     this.webcontentEst.Visible = true;
                 }
             }
@@ -95,11 +99,6 @@ namespace WebApplication1
         {
             Session.Abandon();
             Response.Redirect("Default");
-        }
-
-        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-        {
-
         }
     }
 

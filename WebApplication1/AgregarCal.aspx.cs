@@ -38,6 +38,7 @@ namespace WebApplication1
                 }               
             }           
         }
+
         protected void btElegirAsig_Click(object sender, EventArgs e)
         {
             if(RadioButtonList1.SelectedIndex >= 0)
@@ -55,10 +56,12 @@ namespace WebApplication1
                 wcElegirEst.Visible = true;
             }
         }
+
         protected void btVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("Profesores");
         }
+
         protected void btElegirEst_Click(object sender, EventArgs e)
         {
             if (RadioButtonList2.SelectedIndex >= 0)
@@ -69,6 +72,7 @@ namespace WebApplication1
                 wcCalificar.Visible = true;
             }
         }
+
         protected void btProcesar_Click(object sender, EventArgs e)
         {
             int valorCal;
@@ -106,33 +110,39 @@ namespace WebApplication1
             DataUpdate.UpdateDatosEstudiante(RadioButtonList2.SelectedValue);
             Response.Redirect("Profesores");
         }
+
         protected void btConfirmar2_Click(object sender, EventArgs e)
         {
             InsertCal((int)ViewState["valorCal"]);
             DataUpdate.UpdateDatosEstudiante(RadioButtonList2.SelectedValue);
             Response.Redirect("AgregarCal");
         }
+
         protected void btRetCal_Click(object sender, EventArgs e)
         {
             wcConfirmar.Visible = false;
             wcCalificar.Visible = true;
         }
+
         protected void btCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("Profesores");
         }
+
         protected void btRetEst_Click(object sender, EventArgs e)
         {
             wcCalificar.Visible = false;
             wcElegirEst.Visible = true;
 
         }
+
         protected void btRetAsig_Click(object sender, EventArgs e)
         {
             wcElegirEst.Visible = false;
             wcElegirAsig.Visible = true;
 
         }
+
         protected void tbCal_TextChanged(object sender, EventArgs e)
         {
             lblWarn.Text = "";
