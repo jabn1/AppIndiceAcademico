@@ -117,7 +117,7 @@ namespace WebApplication1
 
         private void FlipRole(string id)
         {
-            AutenticacionTableAdapter autenticacion = new AutenticacionTableAdapter();
+            AutenticacionTableAdapter autenticacion = new AutenticacionTableAdapter(); 
             string role = autenticacion.ScalarQueryGetRoleById(id);
             if (role.Contains("$"))
             {

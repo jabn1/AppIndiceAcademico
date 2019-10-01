@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgregarCal.aspx" />
+    <Content Include="AgregarEntidad.aspx" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
@@ -132,6 +133,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="ControlUsuarios.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="EliminarEntidad.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -215,6 +217,13 @@
     <Compile Include="AgregarCal.aspx.designer.cs">
       <DependentUpon>AgregarCal.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AgregarEntidad.aspx.cs">
+      <DependentUpon>AgregarEntidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarEntidad.aspx.designer.cs">
+      <DependentUpon>AgregarEntidad.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="ControlUsuarios.aspx.cs">
@@ -236,6 +245,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarEntidad.aspx.cs">
+      <DependentUpon>EliminarEntidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarEntidad.aspx.designer.cs">
+      <DependentUpon>EliminarEntidad.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
