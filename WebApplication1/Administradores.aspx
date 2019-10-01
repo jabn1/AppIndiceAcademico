@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="Administradores" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Administradores.aspx.cs" Inherits="WebApplication1.Atministradores" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<div id="webcontentLogin" runat="server" visible="true">
     <h3>Portal de acceso Indice Academico para administradores</h3>
    
     
-    <div id="webcontentLogin" runat="server" visible="true">
+    
         <asp:Login ID="Login1" runat="server" LoginButtonText="Entrar" PasswordLabelText="Clave:" TitleText="Iniciar Sesion:" UserNameLabelText="Usuario:" DisplayRememberMe="False" FailureText="No pudo acceder. Intente de nuevo." Height="119px" Width="151px" OnAuthenticate="Login_Authenticate">
     </asp:Login>
     </div>

@@ -145,6 +145,10 @@ namespace WebApplication1
         }
         protected void btnContinuarEst_Click(object sender, EventArgs e)
         {
+            ViewState["nombre"] = false;
+            ViewState["ID"] = false;
+
+
             this.lblWarn.Visible = false;
             this.lblWarnEst.Visible = false;
             this.lblWarnrad.Visible = false;
@@ -159,6 +163,7 @@ namespace WebApplication1
                 this.CambiarEstudiante.Visible = true;
                 this.txtIDEst.Visible = false;
                 this.txtNombreEst.Visible = true;
+                ViewState["nombre"] = true;
             }
             else if (this.radbtnElegirDatosEst.SelectedValue == "Cambiar ID")
             {
@@ -170,6 +175,9 @@ namespace WebApplication1
 
                 this.txtNombreEst.Visible = false;
                 this.txtIDEst.Visible = true;
+
+                ViewState["ID"] = true;
+
             }
             else if (this.radbtnElegirDatosEst.SelectedValue == "Cambiar Ambos")
             {
@@ -181,6 +189,9 @@ namespace WebApplication1
 
                 this.txtNombreEst.Visible = true;
                 this.txtIDEst.Visible = true;
+
+                ViewState["nombre"] = true;
+                ViewState["ID"] = true;
             }
             else
             {
@@ -255,13 +266,19 @@ namespace WebApplication1
             this.lblWarnEst.Visible = false;
             this.lblWarnrad.Visible = false;
             this.lblWarnTxt0.Visible = false;
+
             EstudiantesTableAdapter estudiantesTableAdapter = new EstudiantesTableAdapter();
-            estudiantesTableAdapter.ChangeEstName(txtNombreEstudiante.Text.ToString().ToUpper(), ViewState["IdEditarEst"].ToString());
-            if(txtIDEstudiante.Visible)
+            //estudiantesTableAdapter.ChangeEstName(txtNombreEstudiante.Text.ToString().ToUpper(), ViewState["IdEditarEst"].ToString());
+
+            if ((bool)ViewState["nombre"])
+            {
+                estudiantesTableAdapter.ChangeEstName(txtNombreEstudiante.Text.ToString().ToUpper(), ViewState["IdEditarEst"].ToString());
+            }
+            if ((bool)ViewState["ID"])
             {
                 estudiantesTableAdapter.ChangeEstId(txtIDEstudiante.Text.ToString(),ViewState["IdEditarEst"].ToString());
             }
-            ViewState["IdEditarEst"] = null;
+            //ViewState["IdEditarEst"] = null;
             Response.Redirect("Administradores");
         }
         protected void btnCancelarEst_Click(object sender, EventArgs e)
@@ -321,6 +338,9 @@ namespace WebApplication1
         }
         protected void btnContinuarProf_Click(object sender, EventArgs e)
         {
+            ViewState["nombreprof"] = false;
+            ViewState["IDprof"] = false;
+
             this.lblWarnProf.Visible = false;
             this.lblWarnradp.Visible = false;
             this.lblWarnTxt1.Visible = false;
@@ -333,6 +353,8 @@ namespace WebApplication1
                 this.CambiarProfesor.Visible = true;
                 this.idprof.Visible = false;
                 this.nombreprof.Visible = true;
+                ViewState["nombreprof"] = true;
+
             }
             else if (this.radbtnElegirDatosProf.SelectedValue == "Cambiar ID")
             {
@@ -344,17 +366,23 @@ namespace WebApplication1
 
                 this.nombreprof.Visible = false;
                 this.idprof.Visible = true;
+                ViewState["IDprof"] = true;
+
             }
             else if (this.radbtnElegirDatosProf.SelectedValue == "Cambiar Ambos")
             {
                 this.lblProfesor.Text = $"Cambiar profesor {profesoresTableAdapter.GetProfName(ViewState["IdEditarProf"].ToString())}";
 
-                this.ElegirCambioEst.Visible = false;
+                this.ElegirCambioProf.Visible = false;
 
                 this.CambiarProfesor.Visible = true;
 
-                this.txtNombreEst.Visible = true;
-                this.txtIDEst.Visible = true;
+                this.nombreprof.Visible = true;
+                this.idprof.Visible = true;
+
+                ViewState["nombreprof"] = true;
+                ViewState["IDprof"] = true;
+
             }
             else
             {
@@ -409,7 +437,7 @@ namespace WebApplication1
                 if (this.txtNombreProfesor.Text != "" && this.txtIDProfesor.Text.Length == 7)
                 {
                     this.CambiarProfesor.Visible = false;
-                    this.ConfirmarEst.Visible = true;
+                    this.ConfirmarProf.Visible = true;
                     this.lblConfirmarNombreProf.Visible = true;
                     this.lblConfirmarIDProf.Visible = true;
                     lblConfirmarNombreProf.Text = $"Nombre del profesor: {txtNombreProfesor.Text.ToString().ToUpper()}";
@@ -427,12 +455,16 @@ namespace WebApplication1
             this.lblWarnradp.Visible = false;
             this.lblWarnTxt1.Visible = false;
             ProfesoresTableAdapter profesoresTableAdapter = new ProfesoresTableAdapter();
-            profesoresTableAdapter.ChangeProfName(txtNombreProfesor.Text.ToString().ToUpper(), ViewState["IdEditarProf"].ToString());
-            if (txtIDProfesor.Visible)
+            //profesoresTableAdapter.ChangeProfName(txtNombreProfesor.Text.ToString().ToUpper(), ViewState["IdEditarProf"].ToString());
+            if ((bool)ViewState["nombreprof"])
+            {
+                profesoresTableAdapter.ChangeProfName(txtNombreProfesor.Text.ToString().ToUpper(), ViewState["IdEditarProf"].ToString());
+            }
+            if ((bool)ViewState["IDprof"])
             {
                 profesoresTableAdapter.ChangeProfID(txtIDProfesor.Text.ToString(), ViewState["IdEditarProf"].ToString());
             }
-            ViewState["IdEditarProf"] = null;
+            //ViewState["IdEditarProf"] = null;
             Response.Redirect("Administradores");
         }
         protected void btnCancelarProf_Click(object sender, EventArgs e)
@@ -497,6 +529,10 @@ namespace WebApplication1
         }
         protected void btnContinuarAsig_Click(object sender, EventArgs e)
         {
+            ViewState["Cambiar nombre"]=false;
+            ViewState["Cambiar clave"]=false;
+            ViewState["credito"]=false;
+
             this.lblWarnAsig.Visible = false;
             this.lblWarnrada.Visible = false;
             this.lblWarnTxt2.Visible = false;
@@ -520,15 +556,20 @@ namespace WebApplication1
                         if (item.Text=="Cambiar nombre")
                         {
                             this.nombreasig.Visible = true;
+                            ViewState["Cambiar nombre"] = true;
                         }
                         if (item.Text == "Cambiar clave")
                         {
                             this.claveasig.Visible = true;
+                            ViewState["Cambiar clave"] = true;
+
                         }
                         if (item.Text == "Cambiar no. de creditos")
                         {
                             this.creditoasig.Visible = true;
-                        } 
+                            ViewState["credito"] = true;
+
+                        }
                     }
 
                 }
@@ -567,8 +608,8 @@ namespace WebApplication1
                 if (this.txtNombreAsignatura.Text != "")
                 {
                     hecho++;
-                    this.lblConfirmarNombreProf.Visible = true;
-                    lblConfirmarNombreProf.Text = $"Nombre de la asignatura: {txtNombreAsignatura.Text.ToString().ToUpper()}";
+                    this.lblConfirmarNombreAsig.Visible = true;
+                    lblConfirmarNombreAsig.Text = $"Nombre de la asignatura: {txtNombreAsignatura.Text.ToString().ToUpper()}";
                 }
                 else
                 {
@@ -580,7 +621,7 @@ namespace WebApplication1
             if (this.claveasig.Visible)
             {
                 total++;
-                if (this.txtClave.Text.Length == 7)
+                if (this.txtClave.Text.Length == 6)
                 {
                     hecho++;
                     this.lblConfirmarClaveAsig.Visible = true;
@@ -626,16 +667,22 @@ namespace WebApplication1
             this.lblWarnrada.Visible = false;
             this.lblWarnTxt2.Visible = false;
             AsignaturasTableAdapter asignaturasTableAdapter = new AsignaturasTableAdapter();
-            asignaturasTableAdapter.ChangeAsigName(txtNombreAsignatura.Text.ToString().ToUpper(), ViewState["IdEditarAsig"].ToString());
-            if (txtClave.Visible)
+            //asignaturasTableAdapter.ChangeAsigName(txtNombreAsignatura.Text.ToString().ToUpper(), ViewState["IdEditarAsig"].ToString());
+            if ((bool)ViewState["Cambiar nombre"])
+            {
+                //int cr = int.Parse(txtCreditosAsignatura.Text.ToString());
+                asignaturasTableAdapter.ChangeAsigName(txtNombreAsignatura.Text.ToString().ToUpper(), ViewState["IdEditarAsig"].ToString());
+            }
+            if ((bool)ViewState["credito"])
+            {
+                int cr = int.Parse(txtCreditosAsignatura.Text.ToString());
+                asignaturasTableAdapter.ChangeCreditoAsig(cr, ViewState["IdEditarAsig"].ToString());
+            }
+            if ((bool) ViewState["Cambiar clave"])
             {
                 asignaturasTableAdapter.ChangeAsigID(txtClave.Text.ToString(), ViewState["IdEditarAsig"].ToString());
             }
-            if (txtCreditosAsignatura.Visible)
-            {
-                asignaturasTableAdapter.ChangeAsigCredito(int.Parse(txtCreditosAsignatura.Text.ToString()), ViewState["IdEditarAsig"].ToString());
-            }
-            ViewState["IdEditarAsig"] = null;
+            //ViewState["IdEditarAsig"] = null;
             Response.Redirect("Administradores");
         }
         protected void btnCancelarAsig_Click(object sender, EventArgs e)
