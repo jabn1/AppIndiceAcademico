@@ -128,29 +128,18 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
-    <Content Include="Administradores.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-
-    <Content Include="Database1.mdf" />
-    <Content Include="Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
-    </Content>
-    <Content Include="Default.aspx" />
-    <Content Include="EditarEntidades.aspx" />
-
     <Content Include="ControlUsuarios.aspx" />
-
+    <Content Include="Default.aspx" />
     <Content Include="EliminarEntidad.aspx" />
-
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Profesores.aspx" />
-
 
     <Content Include="Reportes.aspx" />
     <Content Include="SqlServerTypes\readme.htm" />
@@ -166,7 +155,6 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-
 
     <Content Include="Estudiantes.aspx">
       <BrowseToURL>~/Estudiantes.aspx</BrowseToURL>
@@ -255,14 +243,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
 
-    <Compile Include="Administradores.aspx.cs">
-      <DependentUpon>Administradores.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administradores.aspx.designer.cs">
-      <DependentUpon>Administradores.aspx</DependentUpon>
-
-
     <Compile Include="Database1DataSet.cs">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
 
@@ -287,21 +267,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-
-    <Compile Include="EditarEntidades.aspx.cs">
-      <DependentUpon>EditarEntidades.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditarEntidades.aspx.designer.cs">
-      <DependentUpon>EditarEntidades.aspx</DependentUpon>
-
     <Compile Include="EliminarEntidad.aspx.cs">
       <DependentUpon>EliminarEntidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EliminarEntidad.aspx.designer.cs">
       <DependentUpon>EliminarEntidad.aspx</DependentUpon>
-
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
