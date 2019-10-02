@@ -24,7 +24,7 @@ namespace WebApplication1
 
             if (!IsPostBack)
             {
-                if (true)//(Session["Role"] != null && (Session["Role"].ToString() == "administrador"))
+                if (Session["Role"] != null && (Session["Role"].ToString() == "administrador"))
                 {
 
 
@@ -100,7 +100,7 @@ namespace WebApplication1
         protected void BtMenu_Click(object sender, EventArgs e)
         {
             //Direccion de pagina de admin
-            //Response.Redirect();
+            Response.Redirect("Administradores");
         }
 
         protected void BtVolver_Click(object sender, EventArgs e)

@@ -120,6 +120,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administradores.aspx" />
     <Content Include="AgregarCal.aspx" />
     <Content Include="AgregarEntidad.aspx" />
     <Content Include="App_Data\Database1.mdf" />
@@ -133,6 +134,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="ControlUsuarios.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="EditarEntidades.aspx" />
     <Content Include="EliminarEntidad.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -210,6 +212,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administradores.aspx.cs">
+      <DependentUpon>Administradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administradores.aspx.designer.cs">
+      <DependentUpon>Administradores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AgregarCal.aspx.cs">
       <DependentUpon>AgregarCal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,6 +254,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarEntidades.aspx.cs">
+      <DependentUpon>EditarEntidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarEntidades.aspx.designer.cs">
+      <DependentUpon>EditarEntidades.aspx</DependentUpon>
     </Compile>
     <Compile Include="EliminarEntidad.aspx.cs">
       <DependentUpon>EliminarEntidad.aspx</DependentUpon>

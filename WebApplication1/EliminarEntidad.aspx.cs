@@ -20,18 +20,18 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            div1.Visible = true;
-            //if (!IsPostBack)
-            //{
-            //    if (Session["Role"] != null && (Session["Role"].ToString() == "admin"))
-            //    {
-            //        div1.Visible = true; 
-            //    }
-            //    else
-            //    {
-            //        Response.Redirect("Default");
-            //    }
-            //}
+            
+            if (!IsPostBack)
+            {
+                if (Session["Role"] != null && (Session["Role"].ToString() == "administrador"))
+                {
+                    div1.Visible = true;
+                }
+                else
+                {
+                    Response.Redirect("Default");
+                }
+            }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
