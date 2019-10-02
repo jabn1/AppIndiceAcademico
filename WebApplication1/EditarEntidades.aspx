@@ -226,4 +226,57 @@
     <p></p>
         <asp:Button ID="btnCancelarAsig" runat="server" Text="Volver a editar" OnClick="btnCancelarAsig_Click" />
     </div>
+
+
+<div id="Calificacion" runat="server" visible="false">    
+    <div style="text-align: right; width: 100%;">
+        <asp:Button ID="Button1" runat="server" Text="Volver" OnClick="btnVolverAsignatura_Click" />
+    </div>
+        <h3>Editar calificacion</h3>
+    <h4>Elegir calificacion a editar:</h4>
+        <asp:RadioButtonList ID="RBLcalif" runat="server"></asp:RadioButtonList>
+
+    <p></p>
+    <asp:Button ID="btEditarCal" runat="server" Text="Editar" OnClick="btEditarCal_Click" />
+      <asp:Label ID="LblCalSelWarn" runat="server" style="color: #FF0000" Text="Seleccione una calificacion" Visible="False"></asp:Label>
+</div>
+
+<div id="ModCal" runat="server" visible="false">
+        <div style="text-align: right; width: 100%;">
+        <asp:Button ID="BtVolverCal" runat="server" Text="Volver"  style="height: 26px" />
+    </div>
+    <h3>Introduzca la nueva calificacion para la calificacion elegida:</h3>
+        <h7>
+            <asp:Label ID="LblDatosCal" runat="server" Text=""></asp:Label>
+        </h7>
+        <p></p>
+       
+    <h4 id="H2" runat="server">
+        Nueva calificacion:&nbsp;&nbsp;&nbsp;&nbsp;     
+            <asp:TextBox ID="TbNuevaCal" runat="server"></asp:TextBox>
+    </h4>
+    
+        <p>
+        <asp:Button ID="BtModCal" runat="server" Text="Modificar" OnClick="BtModCal_Click" />
+   <asp:Label ID="LblCalModWarn" runat="server" style="color: #FF0000" Text="La calificacion debe ser un valor entre 0 y 100" Visible="False"></asp:Label>
+            </p>
+    </div>
+
+<div id="ConfirmarCal" runat="server" visible="false">
+        <h3>Seguro que desea cambiar los siguientes datos de la calificacion?</h3>
+        <p></p>
+    <p></p>
+        <h7>
+<asp:Label ID="LblDatosCalCon" runat="server" Text=""></asp:Label>
+        </h7>
+    <h4>
+<asp:Label ID="LblNuevaCal" runat="server" Text=""></asp:Label>       
+    </h4>
+
+    <p></p>
+<asp:Button ID="btConfirmar" runat="server" Text="Confirmar y volver al menu principal" OnClick="btConfirmar_Click" Width="260px"/>
+    <p></p>
+        <asp:Button ID="BtCancelCalif" runat="server" Text="Volver a editar" OnClick="BtCancelCalif_Click" Width="260px" />
+    </div>
+
 </asp:Content>

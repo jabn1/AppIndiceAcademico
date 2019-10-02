@@ -21,7 +21,7 @@ namespace WebApplication1
                     radbtnEntidades.Items.Add("Estudiante");
                     radbtnEntidades.Items.Add("Profesor");
                     radbtnEntidades.Items.Add("Asignatura");
-
+                    radbtnEntidades.Items.Add("Calificacion");
                     wcEditarEntidad.Visible = true;
                 }
                 else
@@ -77,6 +77,22 @@ namespace WebApplication1
                 {
                     radbtnAsignaturas.Items.Add(new ListItem(row["Clave"].ToString() + " - " + row["NombreAsig"].ToString(), row["Clave"].ToString()));
                 }
+            }
+            else if (this.radbtnEntidades.SelectedValue == "Calificacion")
+            {
+                
+
+                ListCalEstTableAdapter calEstTableAdapter = new ListCalEstTableAdapter();
+                foreach (ListCalEstRow row in calEstTableAdapter.GetData().Rows)
+                {
+                    RBLcalif.Items.Add(new ListItem(
+                        "Estudiante: " + row["IdEst"].ToString() + " - " + row["NombreEst"].ToString() + 
+                        " / Asignatura: " + row["Clave"].ToString() + " - " + row["NombreAsig"].ToString() + 
+                        " / Profesor: " + row["IdProf"].ToString() + " - " + row["NombreProf"].ToString() +
+                        " / Calificacion: " + row["Valor"].ToString() + " - " + row["Alpha"].ToString(), row["IdCal"].ToString()));
+                }
+                this.wcEditarEntidad.Visible = false;
+                this.Calificacion.Visible = true;
             }
             else
             {
@@ -708,11 +724,75 @@ namespace WebApplication1
 
         }
 
+        protected void btEditarCal_Click(object sender, EventArgs e)
+        {
+            this.LblCalSelWarn.Visible = false;
+                       
+            if (this.RBLcalif.SelectedIndex > -1)
+            {
+                ViewState["IdEditarCal"] = RBLcalif.SelectedValue;
+                this.LblDatosCal.Text = RBLcalif.SelectedItem.Text;
+                Calificacion.Visible = false;
+                ModCal.Visible = true;               
+            }
+            else
+            {
+                this.LblCalSelWarn.Visible = true;
+            }
+        }
 
+        protected void BtModCal_Click(object sender, EventArgs e)
+        {
+            this.LblCalSelWarn.Visible = false;
 
+            EstudiantesTableAdapter estudiantesTableAdapter = new EstudiantesTableAdapter();
+            
 
-        
+            int valorCal;
+            if (int.TryParse(TbNuevaCal.Text, out valorCal) && valorCal <= 100 && valorCal >= 0)
+            {
+                string alpha = "";
+                int cal = valorCal;
+                if (cal <= 100 && cal >= 90) alpha = "A";
+                else if (cal <= 89 && cal >= 80) alpha = "B";
+                else if (cal <= 79 && cal >= 70) alpha = "C";
+                else if (cal <= 69 && cal >= 60) alpha = "D";
+                else if (cal <= 59 && cal >= 0) alpha = "F";
+                ViewState["alpha"] = alpha;
 
-        
+                LblDatosCalCon.Text = RBLcalif.SelectedItem.Text;
+                LblNuevaCal.Text = "Nueva calificacion: " + TbNuevaCal.Text + " - " + alpha;
+                    
+                ViewState["valorCal"] = valorCal;
+
+                ModCal.Visible = false;
+                ConfirmarCal.Visible = true;
+            }
+            else
+            {
+                this.LblCalModWarn.Visible = true;
+            }
+            
+            
+        }
+
+        protected void btConfirmar_Click(object sender, EventArgs e)
+        {
+            CalificacionesTableAdapter calificaciones = new CalificacionesTableAdapter();
+
+            int IDcal = int.Parse(ViewState["IdEditarCal"].ToString());
+
+            calificaciones.ModCalifByIdCal((int)ViewState["valorCal"], ViewState["alpha"].ToString(), IDcal);
+            DataUpdate.UpdateDatosEstudiante(calificaciones.GetIdEstByIdCal(IDcal));
+            Response.Redirect("Administradores");
+        }
+
+        protected void BtCancelCalif_Click(object sender, EventArgs e)
+        {
+            LblCalModWarn.Visible = false;   
+            ConfirmarCal.Visible = false;
+            ModCal.Visible = true;
+
+        }
     }
 }

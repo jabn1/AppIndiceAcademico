@@ -263,7 +263,7 @@ WHERE        (Id = @Original_Id)</CommandText>
               <Mapping SourceColumn="CantidadCal" DataSetColumn="CantidadCal" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ChangeEstId" Modifier="Public" Name="ChangeEstId" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ChangeEstId">
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ChangeEstId" Modifier="Public" Name="ChangeEstId" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ChangeEstId">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Estudiantes
@@ -276,7 +276,7 @@ WHERE        (IdEst = @id)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ChangeEstName" Modifier="Public" Name="ChangeEstName" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="ChangeEstName">
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ChangeEstName" Modifier="Public" Name="ChangeEstName" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ChangeEstName">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Estudiantes
@@ -300,7 +300,7 @@ WHERE        (IdEst = @id)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="dbo.Estudiantes" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNombreEst" Modifier="Public" Name="GetNombreEst" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="GetNombreEst">
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="dbo.Estudiantes" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetNombreEst" Modifier="Public" Name="GetNombreEst" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetNombreEst">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        NombreEst
@@ -312,7 +312,7 @@ WHERE        (IdEst = @id)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="dbo.Estudiantes" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetStudentsNotInUses" Modifier="Public" Name="GetStudentsNotInUses" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="GetStudentsNotInUses">
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="dbo.Estudiantes" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetStudentsNotInUses" Modifier="Public" Name="GetStudentsNotInUses" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="GetStudentsNotInUses">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        EnUso
@@ -324,7 +324,7 @@ FROM            Estudiantes
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="dbo.Estudiantes" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ReturnNameById" Modifier="Public" Name="ReturnNameById" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ReturnNameById">
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="dbo.Estudiantes" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ReturnNameById" Modifier="Public" Name="ReturnNameById" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ReturnNameById">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        NombreEst AS Expr1
@@ -336,7 +336,7 @@ WHERE        (IdEst = @Id)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQueryDatosEst" Modifier="Public" Name="UpdateQueryDatosEst" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQueryDatosEst">
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQueryDatosEst" Modifier="Public" Name="UpdateQueryDatosEst" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateQueryDatosEst">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Estudiantes
@@ -397,7 +397,7 @@ WHERE        (IdEst = @Original_IdEst)</CommandText>
               <Mapping SourceColumn="NombreProf" DataSetColumn="NombreProf" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ChangeProfID" Modifier="Public" Name="ChangeProfID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ChangeProfID">
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ChangeProfID" Modifier="Public" Name="ChangeProfID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ChangeProfID">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Profesores 
@@ -410,7 +410,7 @@ SET                IdProf = @newid
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ChangeProfName" Modifier="Public" Name="ChangeProfName" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ChangeProfName">
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ChangeProfName" Modifier="Public" Name="ChangeProfName" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ChangeProfName">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Profesores
@@ -434,7 +434,7 @@ WHERE        (IdProf = @id)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="[C:\USERS\JOSE\DESKTOP\ONEDRIVE - INTEC\C# TEST\W1\W1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF].dbo.GetProfName" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="GetProfName" Modifier="Public" Name="GetProfName" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetProfName">
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="[C:\USERS\JOSE\DESKTOP\ONEDRIVE - INTEC\C# TEST\W1\W1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF].dbo.GetProfName" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="GetProfName" Modifier="Public" Name="GetProfName" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetProfName">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.GetProfName</CommandText>
@@ -567,7 +567,32 @@ WHERE        (IdProf = @id)</CommandText>
               <Mapping SourceColumn="Alpha" DataSetColumn="Alpha" />
               <Mapping SourceColumn="ClaveAsignatura" DataSetColumn="ClaveAsignatura" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="dbo.Calificaciones" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetIdEstByIdCal" Modifier="Public" Name="GetIdEstByIdCal" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetIdEstByIdCal">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        IdEstudiante
+FROM            Calificaciones
+WHERE        (IdCal = @IdCal)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdCal" ColumnName="IdCal" DataSourceName="[C:\USERS\JOSE\DESKTOP\ONEDRIVE - INTEC\C# TEST\W1\W1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF].dbo.Calificaciones" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCal" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdCal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ModCalifByIdCal" Modifier="Public" Name="ModCalifByIdCal" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ModCalifByIdCal">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [dbo].[Calificaciones] SET [Valor] = @Valor, [Alpha] = @Alpha  WHERE (([IdCal] = @Original_IdCal))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Valor" ColumnName="Valor" DataSourceName="[C:\USERS\JOSE\DESKTOP\ONEDRIVE - INTEC\C# TEST\W1\W1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF].dbo.Calificaciones" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Valor" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Valor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Alpha" ColumnName="Alpha" DataSourceName="[C:\USERS\JOSE\DESKTOP\ONEDRIVE - INTEC\C# TEST\W1\W1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF].dbo.Calificaciones" DataTypeServer="nvarchar(5)" DbType="String" Direction="Input" ParameterName="@Alpha" Precision="0" ProviderType="NVarChar" Scale="0" Size="5" SourceColumn="Alpha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_IdCal" ColumnName="IdCal" DataSourceName="[C:\USERS\JOSE\DESKTOP\ONEDRIVE - INTEC\C# TEST\W1\W1\WEBAPPLICATION1\APP_DATA\DATABASE1.MDF].dbo.Calificaciones" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_IdCal" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdCal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AdministradoresTableAdapter" GeneratorDataComponentClassName="AdministradoresTableAdapter" Name="Administradores" UserDataComponentName="AdministradoresTableAdapter">
             <MainSource>
@@ -634,7 +659,7 @@ WHERE        (IdAdmin = @id)</CommandText>
   <xs:element name="Database1DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Database1DataSet" msprop:Generator_UserDSName="Database1DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Asignaturas" msprop:Generator_TableClassName="AsignaturasDataTable" msprop:Generator_TableVarName="tableAsignaturas" msprop:Generator_TablePropName="Asignaturas" msprop:Generator_RowDeletingName="AsignaturasRowDeleting" msprop:Generator_RowChangingName="AsignaturasRowChanging" msprop:Generator_RowEvHandlerName="AsignaturasRowChangeEventHandler" msprop:Generator_RowDeletedName="AsignaturasRowDeleted" msprop:Generator_UserTableName="Asignaturas" msprop:Generator_RowChangedName="AsignaturasRowChanged" msprop:Generator_RowEvArgName="AsignaturasRowChangeEvent" msprop:Generator_RowClassName="AsignaturasRow">
+        <xs:element name="Asignaturas" msprop:Generator_TableClassName="AsignaturasDataTable" msprop:Generator_TableVarName="tableAsignaturas" msprop:Generator_RowChangedName="AsignaturasRowChanged" msprop:Generator_TablePropName="Asignaturas" msprop:Generator_RowDeletingName="AsignaturasRowDeleting" msprop:Generator_RowChangingName="AsignaturasRowChanging" msprop:Generator_RowEvHandlerName="AsignaturasRowChangeEventHandler" msprop:Generator_RowDeletedName="AsignaturasRowDeleted" msprop:Generator_RowClassName="AsignaturasRow" msprop:Generator_UserTableName="Asignaturas" msprop:Generator_RowEvArgName="AsignaturasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Clave" msprop:Generator_ColumnVarNameInTable="columnClave" msprop:Generator_ColumnPropNameInRow="Clave" msprop:Generator_ColumnPropNameInTable="ClaveColumn" msprop:Generator_UserColumnName="Clave">
@@ -655,7 +680,7 @@ WHERE        (IdAdmin = @id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Autenticacion" msprop:Generator_TableClassName="AutenticacionDataTable" msprop:Generator_TableVarName="tableAutenticacion" msprop:Generator_TablePropName="Autenticacion" msprop:Generator_RowDeletingName="AutenticacionRowDeleting" msprop:Generator_RowChangingName="AutenticacionRowChanging" msprop:Generator_RowEvHandlerName="AutenticacionRowChangeEventHandler" msprop:Generator_RowDeletedName="AutenticacionRowDeleted" msprop:Generator_UserTableName="Autenticacion" msprop:Generator_RowChangedName="AutenticacionRowChanged" msprop:Generator_RowEvArgName="AutenticacionRowChangeEvent" msprop:Generator_RowClassName="AutenticacionRow">
+        <xs:element name="Autenticacion" msprop:Generator_TableClassName="AutenticacionDataTable" msprop:Generator_TableVarName="tableAutenticacion" msprop:Generator_RowChangedName="AutenticacionRowChanged" msprop:Generator_TablePropName="Autenticacion" msprop:Generator_RowDeletingName="AutenticacionRowDeleting" msprop:Generator_RowChangingName="AutenticacionRowChanging" msprop:Generator_RowEvHandlerName="AutenticacionRowChangeEventHandler" msprop:Generator_RowDeletedName="AutenticacionRowDeleted" msprop:Generator_RowClassName="AutenticacionRow" msprop:Generator_UserTableName="Autenticacion" msprop:Generator_RowEvArgName="AutenticacionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id">
@@ -689,7 +714,7 @@ WHERE        (IdAdmin = @id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Estudiantes" msprop:Generator_TableClassName="EstudiantesDataTable" msprop:Generator_TableVarName="tableEstudiantes" msprop:Generator_TablePropName="Estudiantes" msprop:Generator_RowDeletingName="EstudiantesRowDeleting" msprop:Generator_RowChangingName="EstudiantesRowChanging" msprop:Generator_RowEvHandlerName="EstudiantesRowChangeEventHandler" msprop:Generator_RowDeletedName="EstudiantesRowDeleted" msprop:Generator_UserTableName="Estudiantes" msprop:Generator_RowChangedName="EstudiantesRowChanged" msprop:Generator_RowEvArgName="EstudiantesRowChangeEvent" msprop:Generator_RowClassName="EstudiantesRow">
+        <xs:element name="Estudiantes" msprop:Generator_TableClassName="EstudiantesDataTable" msprop:Generator_TableVarName="tableEstudiantes" msprop:Generator_RowChangedName="EstudiantesRowChanged" msprop:Generator_TablePropName="Estudiantes" msprop:Generator_RowDeletingName="EstudiantesRowDeleting" msprop:Generator_RowChangingName="EstudiantesRowChanging" msprop:Generator_RowEvHandlerName="EstudiantesRowChangeEventHandler" msprop:Generator_RowDeletedName="EstudiantesRowDeleted" msprop:Generator_RowClassName="EstudiantesRow" msprop:Generator_UserTableName="Estudiantes" msprop:Generator_RowEvArgName="EstudiantesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdEst" msprop:Generator_ColumnVarNameInTable="columnIdEst" msprop:Generator_ColumnPropNameInRow="IdEst" msprop:Generator_ColumnPropNameInTable="IdEstColumn" msprop:Generator_UserColumnName="IdEst">
@@ -732,7 +757,7 @@ WHERE        (IdAdmin = @id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Profesores" msprop:Generator_TableClassName="ProfesoresDataTable" msprop:Generator_TableVarName="tableProfesores" msprop:Generator_TablePropName="Profesores" msprop:Generator_RowDeletingName="ProfesoresRowDeleting" msprop:Generator_RowChangingName="ProfesoresRowChanging" msprop:Generator_RowEvHandlerName="ProfesoresRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfesoresRowDeleted" msprop:Generator_UserTableName="Profesores" msprop:Generator_RowChangedName="ProfesoresRowChanged" msprop:Generator_RowEvArgName="ProfesoresRowChangeEvent" msprop:Generator_RowClassName="ProfesoresRow">
+        <xs:element name="Profesores" msprop:Generator_TableClassName="ProfesoresDataTable" msprop:Generator_TableVarName="tableProfesores" msprop:Generator_RowChangedName="ProfesoresRowChanged" msprop:Generator_TablePropName="Profesores" msprop:Generator_RowDeletingName="ProfesoresRowDeleting" msprop:Generator_RowChangingName="ProfesoresRowChanging" msprop:Generator_RowEvHandlerName="ProfesoresRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfesoresRowDeleted" msprop:Generator_RowClassName="ProfesoresRow" msprop:Generator_UserTableName="Profesores" msprop:Generator_RowEvArgName="ProfesoresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdProf" msprop:Generator_ColumnVarNameInTable="columnIdProf" msprop:Generator_ColumnPropNameInRow="IdProf" msprop:Generator_ColumnPropNameInTable="IdProfColumn" msprop:Generator_UserColumnName="IdProf">
@@ -752,7 +777,7 @@ WHERE        (IdAdmin = @id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ListCalEst" msprop:Generator_TableClassName="ListCalEstDataTable" msprop:Generator_TableVarName="tableListCalEst" msprop:Generator_TablePropName="ListCalEst" msprop:Generator_RowDeletingName="ListCalEstRowDeleting" msprop:Generator_RowChangingName="ListCalEstRowChanging" msprop:Generator_RowEvHandlerName="ListCalEstRowChangeEventHandler" msprop:Generator_RowDeletedName="ListCalEstRowDeleted" msprop:Generator_UserTableName="ListCalEst" msprop:Generator_RowChangedName="ListCalEstRowChanged" msprop:Generator_RowEvArgName="ListCalEstRowChangeEvent" msprop:Generator_RowClassName="ListCalEstRow">
+        <xs:element name="ListCalEst" msprop:Generator_TableClassName="ListCalEstDataTable" msprop:Generator_TableVarName="tableListCalEst" msprop:Generator_RowChangedName="ListCalEstRowChanged" msprop:Generator_TablePropName="ListCalEst" msprop:Generator_RowDeletingName="ListCalEstRowDeleting" msprop:Generator_RowChangingName="ListCalEstRowChanging" msprop:Generator_RowEvHandlerName="ListCalEstRowChangeEventHandler" msprop:Generator_RowDeletedName="ListCalEstRowDeleted" msprop:Generator_RowClassName="ListCalEstRow" msprop:Generator_UserTableName="ListCalEst" msprop:Generator_RowEvArgName="ListCalEstRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdCal" msprop:Generator_ColumnVarNameInTable="columnIdCal" msprop:Generator_ColumnPropNameInRow="IdCal" msprop:Generator_ColumnPropNameInTable="IdCalColumn" msprop:Generator_UserColumnName="IdCal" type="xs:int" />
@@ -854,7 +879,7 @@ WHERE        (IdAdmin = @id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Calificaciones" msprop:Generator_TableClassName="CalificacionesDataTable" msprop:Generator_TableVarName="tableCalificaciones" msprop:Generator_TablePropName="Calificaciones" msprop:Generator_RowDeletingName="CalificacionesRowDeleting" msprop:Generator_RowChangingName="CalificacionesRowChanging" msprop:Generator_RowEvHandlerName="CalificacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="CalificacionesRowDeleted" msprop:Generator_UserTableName="Calificaciones" msprop:Generator_RowChangedName="CalificacionesRowChanged" msprop:Generator_RowEvArgName="CalificacionesRowChangeEvent" msprop:Generator_RowClassName="CalificacionesRow">
+        <xs:element name="Calificaciones" msprop:Generator_TableClassName="CalificacionesDataTable" msprop:Generator_TableVarName="tableCalificaciones" msprop:Generator_RowChangedName="CalificacionesRowChanged" msprop:Generator_TablePropName="Calificaciones" msprop:Generator_RowDeletingName="CalificacionesRowDeleting" msprop:Generator_RowChangingName="CalificacionesRowChanging" msprop:Generator_RowEvHandlerName="CalificacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="CalificacionesRowDeleted" msprop:Generator_RowClassName="CalificacionesRow" msprop:Generator_UserTableName="Calificaciones" msprop:Generator_RowEvArgName="CalificacionesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdCal" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCal" msprop:Generator_ColumnPropNameInRow="IdCal" msprop:Generator_ColumnPropNameInTable="IdCalColumn" msprop:Generator_UserColumnName="IdCal" type="xs:int" />
@@ -890,7 +915,7 @@ WHERE        (IdAdmin = @id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Administradores" msprop:Generator_TableClassName="AdministradoresDataTable" msprop:Generator_TableVarName="tableAdministradores" msprop:Generator_TablePropName="Administradores" msprop:Generator_RowDeletingName="AdministradoresRowDeleting" msprop:Generator_RowChangingName="AdministradoresRowChanging" msprop:Generator_RowEvHandlerName="AdministradoresRowChangeEventHandler" msprop:Generator_RowDeletedName="AdministradoresRowDeleted" msprop:Generator_UserTableName="Administradores" msprop:Generator_RowChangedName="AdministradoresRowChanged" msprop:Generator_RowEvArgName="AdministradoresRowChangeEvent" msprop:Generator_RowClassName="AdministradoresRow">
+        <xs:element name="Administradores" msprop:Generator_TableClassName="AdministradoresDataTable" msprop:Generator_TableVarName="tableAdministradores" msprop:Generator_RowChangedName="AdministradoresRowChanged" msprop:Generator_TablePropName="Administradores" msprop:Generator_RowDeletingName="AdministradoresRowDeleting" msprop:Generator_RowChangingName="AdministradoresRowChanging" msprop:Generator_RowEvHandlerName="AdministradoresRowChangeEventHandler" msprop:Generator_RowDeletedName="AdministradoresRowDeleted" msprop:Generator_RowClassName="AdministradoresRow" msprop:Generator_UserTableName="Administradores" msprop:Generator_RowEvArgName="AdministradoresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdAdmin" msprop:Generator_ColumnVarNameInTable="columnIdAdmin" msprop:Generator_ColumnPropNameInRow="IdAdmin" msprop:Generator_ColumnPropNameInTable="IdAdminColumn" msprop:Generator_UserColumnName="IdAdmin">
