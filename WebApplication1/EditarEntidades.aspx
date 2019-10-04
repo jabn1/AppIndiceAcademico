@@ -23,7 +23,7 @@
     <div style="text-align: right; width: 100%;">
         <asp:Button ID="btnVolverEstudiante" runat="server" Text="Volver" OnClick="btnVolverEstudiante_Click" />
     </div>
-        <h3>Editar estudiante</h3>
+        <h3>Editar nombre del estudiante</h3>
     <h4>Elegir estudiante a editar:</h4>
         <asp:RadioButtonList ID="radbtnEstudiantes" runat="server" OnSelectedIndexChanged="radbtnEntidades_SelectedIndexChanged"></asp:RadioButtonList>
 
@@ -61,14 +61,9 @@
         <h4 id="txtNombreEst" runat="server" visible="false">Nombre: 
             <asp:TextBox ID="txtNombreEstudiante" runat="server"></asp:TextBox>
         </h4>
-    <div id="txtIDEst" runat="server" visible="false">
-        <h4>ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-            <asp:TextBox ID="txtIDEstudiante" runat="server"></asp:TextBox>
-        </h4> 
-    </div>
+    <p></p>
         <p>
-        <asp:Button ID="btnModificarEstudiante" runat="server" Text="Modificar" OnClick="btnModificarEstudiante_Click" />
-      
+        <asp:Button ID="btnModificarEstudiante" runat="server" Text="Modificar" OnClick="btnModificarEstudiante_Click" />      
         <asp:Label ID="lblWarnTxt0" runat="server" style="color: #FF0000" Text="Llene los campos requeridos" Visible="False"></asp:Label>
       
     </p>
@@ -77,19 +72,26 @@
 <div id="ConfirmarEst" runat="server" visible="false">
         <h3>Seguro que desea cambiar los siguientes datos del estudiante?</h3>
         <p></p>
-    <p></p>
+   
         <h4>
 <asp:Label ID="lblConfirmarNombreEst" runat="server" Text=""></asp:Label>
         </h4>
-    <h4>
-<asp:Label ID="lblConfirmarIDEst" runat="server" Text=""></asp:Label>       
-    </h4>
+    
     <p></p>
-<asp:Button ID="btnConfirmarEst" runat="server" Text="Confirmar y volver al menu principal" OnClick="btnConfirmarEst_Click" />
+<asp:Button ID="btnConfirmarEst" runat="server" Text="Confirmar" OnClick="btnConfirmarEst_Click" />
     <p></p>
         <asp:Button ID="btnCancelarEst" runat="server" Text="Volver a editar" OnClick="btnCancelarEst_Click" />
+    
+    <div>
+        <p></p>
+        <h3>
+        <asp:Label ID="lblEdicionEst" runat="server" Text="El nombre del estudiante ha sido cambiado."></asp:Label>
+        </h3>
+        <p></p>
+        <asp:Button ID="btnVolverMenuPrincipalEst" runat="server" Text="Volver al menu principal" OnClick="btnVolverMenuPrincipalEst_Click" />
+        
     </div>
-
+</div>
 
 <div id="profesor" runat="server" visible="false">    
     <div style="text-align: right; width: 100%;">
@@ -131,9 +133,7 @@
         <h4 id="nombreprof" runat="server" visible="false">Nombre: 
             <asp:TextBox ID="txtNombreProfesor" runat="server"></asp:TextBox>
         </h4>
-        <h4 id="idprof" runat="server" visible="true">ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-            <asp:TextBox ID="txtIDProfesor" runat="server"></asp:TextBox>
-        </h4> 
+        <p></p>
         <p>
         <asp:Button ID="btnModificarProfesor" runat="server" Text="Modificar" OnClick="btnModificarProfesor_Click" />
     <asp:Label ID="lblWarnTxt1" runat="server" style="color: #FF0000" Text="Llene los campos requeridos" Visible="False"></asp:Label>
@@ -141,18 +141,23 @@
     </div>
 <div id="ConfirmarProf" runat="server" visible="false">
         <h3>Seguro que desea cambiar los siguientes datos del profesor?</h3>
-        <p></p>
     <p></p>
         <h4>
 <asp:Label ID="lblConfirmarNombreProf" runat="server" Text=""></asp:Label>
-        </h4>
-    <h4>
-<asp:Label ID="lblConfirmarIDProf" runat="server" Text=""></asp:Label>       
-    </h4>
+        </h4>    
     <p></p>
-<asp:Button ID="btnConfirmarProf" runat="server" Text="Confirmar y volver al menu principal" OnClick="btnConfirmarProf_Click" />
+<asp:Button ID="btnConfirmarProf" runat="server" Text="Confirmar" OnClick="btnConfirmarProf_Click" />
     <p></p>
         <asp:Button ID="btnCancelarProf" runat="server" Text="Volver a editar" OnClick="btnCancelarProf_Click" />
+    <div>
+        <p></p>
+        <h3>
+        <asp:Label ID="lblEdicionProf" runat="server" Text="El nombre del profesor ha sido cambiado."></asp:Label>
+        </h3>
+        <p></p>
+        <asp:Button ID="btnVolverMenuPrincipalProf" runat="server" Text="Volver al menu principal" OnClick="btnVolverMenuPrincipalProf_Click" />
+        
+    </div>
     </div>
 
 

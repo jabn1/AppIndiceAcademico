@@ -3875,34 +3875,34 @@ namespace WebApplication1.Database1DataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE       Asignaturas\nSET                Clave = @newclave\nWHERE        (Clave" +
-                " = @clave)";
+            this._commandCollection[1].CommandText = "UPDATE       Asignaturas\r\nSET                Clave = @newclave\r\nWHERE        (Cla" +
+                "ve = @clave)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newclave", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Clave", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clave", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Clave", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE       Asignaturas\nSET                NombreAsig = @nombre\nWHERE        (Cl" +
-                "ave = @clave)";
+            this._commandCollection[2].CommandText = "UPDATE       Asignaturas\r\nSET                NombreAsig = @nombre\r\nWHERE        (" +
+                "Clave = @clave)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "NombreAsig", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clave", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Clave", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE       Asignaturas\nSET                Creditos = @credito\nWHERE        (Cla" +
-                "ve = @Original_Clave)";
+            this._commandCollection[3].CommandText = "UPDATE       Asignaturas\r\nSET                Creditos = @credito\r\nWHERE        (C" +
+                "lave = @Original_Clave)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@credito", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Creditos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Clave", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Clave", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        NombreAsig\nFROM            Asignaturas\nWHERE        (Clave = @clave" +
-                ")";
+            this._commandCollection[4].CommandText = "SELECT        NombreAsig\r\nFROM            Asignaturas\r\nWHERE        (Clave = @cla" +
+                "ve)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clave", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Clave", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        EnUso\nFROM            Asignaturas \nWHERE        (Clave = @id)";
+            this._commandCollection[5].CommandText = "SELECT        EnUsoAsig\r\nFROM            Asignaturas\r\nWHERE        (Clave = @id)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Clave", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -4206,7 +4206,7 @@ namespace WebApplication1.Database1DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string GetUse(string id) {
+        public virtual object GetUse(string id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((id == null)) {
                 throw new global::System.ArgumentNullException("id");
@@ -4233,7 +4233,7 @@ namespace WebApplication1.Database1DataSetTableAdapters {
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
     }
@@ -4897,15 +4897,15 @@ namespace WebApplication1.Database1DataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE       Estudiantes\nSET                IdEst = @newId\nWHERE        (IdEst = " +
-                "@id)";
+            this._commandCollection[1].CommandText = "UPDATE       Estudiantes\r\nSET                IdEst = @newId\r\nWHERE        (IdEst " +
+                "= @id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newId", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "IdEst", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "IdEst", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE       Estudiantes\nSET                NombreEst = @nombre\nWHERE        (IdE" +
-                "st = @id)";
+            this._commandCollection[2].CommandText = "UPDATE       Estudiantes\r\nSET                NombreEst = @nombre\r\nWHERE        (I" +
+                "dEst = @id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "NombreEst", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "IdEst", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4917,12 +4917,13 @@ namespace WebApplication1.Database1DataSetTableAdapters {
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClaveEx", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        NombreEst\n FROM            Estudiantes \nWHERE        (IdEst = @id)";
+            this._commandCollection[4].CommandText = "SELECT        NombreEst\r\n FROM            Estudiantes \r\nWHERE        (IdEst = @id" +
+                ")";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "IdEst", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        EnUso\nFROM            Estudiantes\n WHERE        (IdEst = @id)";
+            this._commandCollection[5].CommandText = "SELECT        EnUsoEst\r\nFROM            Estudiantes\r\n WHERE        (IdEst = @id)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "IdEst", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
@@ -5287,7 +5288,7 @@ namespace WebApplication1.Database1DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string GetStudentsNotInUses(string id) {
+        public virtual object GetStudentsNotInUses(string id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((id == null)) {
                 throw new global::System.ArgumentNullException("id");
@@ -5314,7 +5315,7 @@ namespace WebApplication1.Database1DataSetTableAdapters {
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
         
@@ -5559,15 +5560,15 @@ namespace WebApplication1.Database1DataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE       Profesores \nSET                IdProf = @newid\n  WHERE        (IdPro" +
-                "f = @id)";
+            this._commandCollection[1].CommandText = "UPDATE       Profesores \r\nSET                IdProf = @newid\r\n  WHERE        (IdP" +
+                "rof = @id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newid", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "IdProf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "IdProf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE       Profesores\n SET                NombreProf = @name \nWHERE        (IdP" +
-                "rof = @id)";
+            this._commandCollection[2].CommandText = "UPDATE       Profesores\r\n SET                NombreProf = @name \r\nWHERE        (I" +
+                "dProf = @id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "NombreProf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "IdProf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5585,7 +5586,8 @@ namespace WebApplication1.Database1DataSetTableAdapters {
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdProf", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        EnUso\n FROM            Profesores\n WHERE        (IdProf = @id)";
+            this._commandCollection[5].CommandText = "SELECT        EnUsoProf\r\n FROM            Profesores\r\n WHERE        (IdProf = @id" +
+                ")";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "IdProf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -5893,7 +5895,7 @@ namespace WebApplication1.Database1DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string GetUse(string id) {
+        public virtual object GetUse(string id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((id == null)) {
                 throw new global::System.ArgumentNullException("id");
@@ -5920,7 +5922,7 @@ namespace WebApplication1.Database1DataSetTableAdapters {
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
     }
@@ -6777,8 +6779,8 @@ namespace WebApplication1.Database1DataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        NombreAdmin\nFROM            Administradores\nWHERE        (IdAdmin =" +
-                " @id)";
+            this._commandCollection[1].CommandText = "SELECT        NombreAdmin\r\nFROM            Administradores\r\nWHERE        (IdAdmin" +
+                " = @id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "IdAdmin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

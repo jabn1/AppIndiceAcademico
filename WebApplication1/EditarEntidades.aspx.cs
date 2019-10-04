@@ -115,7 +115,6 @@ namespace WebApplication1
             Response.Redirect("EditarEntidades");
             ViewState["IdEditarEst"] = null;
             this.txtNombreEstudiante.Text = "";
-            this.txtIDEstudiante.Text = "";
             this.lblWarn.Visible = false;
         }
         protected void btnEditarEstudiante_Click(object sender, EventArgs e)
@@ -133,16 +132,7 @@ namespace WebApplication1
                 this.estudiante.Visible = false;
                 this.ElegirCambioEst.Visible = true;
 
-                if (estudiantesTableAdapter.GetStudentsNotInUses(ViewState["IdEditarEst"].ToString()).ToString() == "si")
-                {
-                    this.txtIDEst.Visible = false;
-                }
-                else
-                {
-                    this.radbtnElegirDatosEst.Items.Add("Cambiar ID");
-                    this.radbtnElegirDatosEst.Items.Add("Cambiar Ambos");
-                    this.txtIDEst.Visible = true;
-                }
+              
             }
             else
             {
@@ -156,7 +146,6 @@ namespace WebApplication1
             ViewState["IdEditarEst"] = null;
             this.radbtnElegirDatosEst.Items.Clear();
             this.txtNombreEstudiante.Text = "";
-            this.txtIDEstudiante.Text = "";
             this.lblWarnEst.Visible = false;
         }
         protected void btnContinuarEst_Click(object sender, EventArgs e)
@@ -177,38 +166,9 @@ namespace WebApplication1
                 this.ElegirCambioEst.Visible = false;
 
                 this.CambiarEstudiante.Visible = true;
-                this.txtIDEst.Visible = false;
                 this.txtNombreEst.Visible = true;
                 ViewState["nombre"] = true;
-            }
-            else if (this.radbtnElegirDatosEst.SelectedValue == "Cambiar ID")
-            {
-                this.lblEstudiante.Text = $"Cambiar estudiante {estudiantesTableAdapter.GetNombreEst(ViewState["IdEditarEst"].ToString())}";
-
-                this.ElegirCambioEst.Visible = false;
-
-                this.CambiarEstudiante.Visible = true;
-
-                this.txtNombreEst.Visible = false;
-                this.txtIDEst.Visible = true;
-
-                ViewState["ID"] = true;
-
-            }
-            else if (this.radbtnElegirDatosEst.SelectedValue == "Cambiar Ambos")
-            {
-                this.lblEstudiante.Text = $"Cambiar estudiante {estudiantesTableAdapter.GetNombreEst(ViewState["IdEditarEst"].ToString())}";
-
-                this.ElegirCambioEst.Visible = false;
-
-                this.CambiarEstudiante.Visible = true;
-
-                this.txtNombreEst.Visible = true;
-                this.txtIDEst.Visible = true;
-
-                ViewState["nombre"] = true;
-                ViewState["ID"] = true;
-            }
+            }            
             else
             {
                 this.lblWarnrad.Visible = true;
@@ -221,7 +181,6 @@ namespace WebApplication1
             this.ElegirCambioEst.Visible = true;
             //this.radbtnElegirDatosEst.Items.Clear();
             this.txtNombreEstudiante.Text = "";
-            this.txtIDEstudiante.Text = "";
             this.lblWarnrad.Visible = false;
         }
         protected void btnModificarEstudiante_Click(object sender, EventArgs e)
@@ -230,51 +189,20 @@ namespace WebApplication1
             this.lblWarnEst.Visible = false;
             this.lblWarnrad.Visible = false;
             this.lblWarnTxt0.Visible = false;
-            if(!this.txtIDEstudiante.Visible)
+
+            if (this.txtNombreEstudiante.Text != "")
             {
-                if (txtNombreEstudiante.Text != "")
-                {
-                    this.CambiarEstudiante.Visible = false;
-                    this.ConfirmarEst.Visible = true;
-                    this.lblConfirmarNombreEst.Visible = true;                    
-                    lblConfirmarNombreEst.Text = $"Nombre del estudiante: {txtNombreEstudiante.Text.ToString().ToUpper()}";
-                }
-                else
-                {
-                    this.lblWarnTxt0.Visible = true;
-                }
+                this.CambiarEstudiante.Visible = false;
+                this.ConfirmarEst.Visible = true;
+                this.lblConfirmarNombreEst.Visible = true;
+                lblConfirmarNombreEst.Text = $"Nombre del estudiante: {txtNombreEstudiante.Text.ToString().ToUpper()}";
+                this.lblEdicionEst.Visible = false;
             }
-            else if(!this.txtNombreEstudiante.Visible)
+            else
             {
-                if (this.txtIDEstudiante.Text.Length==7)
-                {
-                    this.CambiarEstudiante.Visible = false;
-                    this.ConfirmarEst.Visible = true;
-                    this.lblConfirmarIDEst.Visible = true;
-                    lblConfirmarIDEst.Text = $"ID del estudiante: {txtIDEstudiante.Text.ToString().ToUpper()}"; 
-                }
-                else
-                {
-                    this.lblWarnTxt0.Visible = true;
-                }
+                this.lblWarnTxt0.Visible = true;
             }
-            else if (this.txtNombreEstudiante.Visible && this.txtIDEstudiante.Visible)
-            {
-                if (this.txtNombreEstudiante.Text != "" && this.txtIDEstudiante.Text.Length == 7)
-                {
-                    this.CambiarEstudiante.Visible = false;
-                    this.ConfirmarEst.Visible = true;
-                    this.lblConfirmarNombreEst.Visible = true;
-                    this.lblConfirmarIDEst.Visible = true;
-                    lblConfirmarNombreEst.Text = $"Nombre del estudiante: {txtNombreEstudiante.Text.ToString().ToUpper()}";
-                    lblConfirmarIDEst.Text = $"ID del estudiante: {txtIDEstudiante.Text.ToString()}";
-                }
-                else
-                {
-                    this.lblWarnTxt0.Visible = true;
-                }
-            }
-            
+            this.btnVolverMenuPrincipalEst.Visible = false;
         }
         protected void btnConfirmarEst_Click(object sender, EventArgs e)
         {
@@ -290,12 +218,11 @@ namespace WebApplication1
             {
                 estudiantesTableAdapter.ChangeEstName(txtNombreEstudiante.Text.ToString().ToUpper(), ViewState["IdEditarEst"].ToString());
             }
-            if ((bool)ViewState["ID"])
-            {
-                estudiantesTableAdapter.ChangeEstId(txtIDEstudiante.Text.ToString(),ViewState["IdEditarEst"].ToString());
-            }
             //ViewState["IdEditarEst"] = null;
-            Response.Redirect("Administradores");
+            this.lblEdicionEst.Visible = true;
+            this.btnCancelarEst.Visible = false;
+            this.btnVolverMenuPrincipalEst.Visible = true;
+            
         }
         protected void btnCancelarEst_Click(object sender, EventArgs e)
         {
@@ -303,6 +230,11 @@ namespace WebApplication1
             this.CambiarEstudiante.Visible = true;
             this.lblWarnTxt0.Visible = false;
         }
+        protected void btnVolverMenuPrincipalEst_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Administradores");
+        }
+        
         
         
         //profesores
@@ -326,16 +258,7 @@ namespace WebApplication1
                 this.profesor.Visible = false;
                 this.ElegirCambioProf.Visible = true;
 
-                if (profesoresTableAdapter.GetUse(ViewState["IdEditarProf"].ToString()).ToString() == "si")
-                {
-                    this.idprof.Visible = false;
-                }
-                else
-                {
-                    this.radbtnElegirDatosProf.Items.Add("Cambiar ID");
-                    this.radbtnElegirDatosProf.Items.Add("Cambiar Ambos");
-                    this.nombreprof.Visible = true;
-                }
+                
             }
             else
             {
@@ -349,7 +272,6 @@ namespace WebApplication1
             ViewState["IdEditarProf"] = null;
             this.radbtnElegirDatosProf.Items.Clear();
             this.txtNombreProfesor.Text = "";
-            this.txtIDProfesor.Text = "";
             this.lblWarnProf.Visible = false;
         }
         protected void btnContinuarProf_Click(object sender, EventArgs e)
@@ -367,39 +289,10 @@ namespace WebApplication1
                 this.ElegirCambioProf.Visible = false;
 
                 this.CambiarProfesor.Visible = true;
-                this.idprof.Visible = false;
                 this.nombreprof.Visible = true;
                 ViewState["nombreprof"] = true;
 
-            }
-            else if (this.radbtnElegirDatosProf.SelectedValue == "Cambiar ID")
-            {
-                this.lblProfesor.Text = $"Cambiar profesor {profesoresTableAdapter.GetProfName(ViewState["IdEditarProf"].ToString())}";
-
-                this.ElegirCambioProf.Visible = false;
-
-                this.CambiarProfesor.Visible = true;
-
-                this.nombreprof.Visible = false;
-                this.idprof.Visible = true;
-                ViewState["IDprof"] = true;
-
-            }
-            else if (this.radbtnElegirDatosProf.SelectedValue == "Cambiar Ambos")
-            {
-                this.lblProfesor.Text = $"Cambiar profesor {profesoresTableAdapter.GetProfName(ViewState["IdEditarProf"].ToString())}";
-
-                this.ElegirCambioProf.Visible = false;
-
-                this.CambiarProfesor.Visible = true;
-
-                this.nombreprof.Visible = true;
-                this.idprof.Visible = true;
-
-                ViewState["nombreprof"] = true;
-                ViewState["IDprof"] = true;
-
-            }
+            }            
             else
             {
                 this.lblWarnradp.Visible = true;
@@ -411,7 +304,6 @@ namespace WebApplication1
             this.CambiarProfesor.Visible = false;
             this.ElegirCambioProf.Visible = true;
             this.txtNombreProfesor.Text = "";
-            this.txtIDProfesor.Text = "";
             this.lblWarnradp.Visible = false;
         }               
         protected void btnModificarProfesor_Click(object sender, EventArgs e)
@@ -420,50 +312,20 @@ namespace WebApplication1
             this.lblWarnradp.Visible = false;
             this.lblWarnTxt1.Visible = false;
 
-            if (!this.txtIDProfesor.Visible)
+            
+            if (this.txtNombreProfesor.Text != "")
             {
-                if (txtNombreProfesor.Text != "")
-                {
-                    this.CambiarProfesor.Visible = false;
-                    this.ConfirmarProf.Visible = true;
-                    this.lblConfirmarNombreProf.Visible = true;
-                    lblConfirmarNombreProf.Text = $"Nombre del profesor: {txtNombreProfesor.Text.ToString().ToUpper()}";
-                }
-                else
-                {
-                    this.lblWarnTxt1.Visible = true;
-                }
+                this.CambiarProfesor.Visible = false;
+                this.ConfirmarProf.Visible = true;
+                this.lblConfirmarNombreProf.Visible = true;
+                lblConfirmarNombreProf.Text = $"Nombre del profesor: {txtNombreProfesor.Text.ToString().ToUpper()}";
+                this.lblEdicionProf.Visible = false;
             }
-            else if (!this.txtNombreProfesor.Visible)
+            else
             {
-                if (this.txtIDProfesor.Text.Length == 7)
-                {
-                    this.CambiarProfesor.Visible = false;
-                    this.ConfirmarProf.Visible = true;
-                    this.lblConfirmarIDProf.Visible = true;
-                    lblConfirmarIDProf.Text = $"ID del profesor: {txtIDProfesor.Text.ToString().ToUpper()}";
-                }
-                else
-                {
-                    this.lblWarnTxt1.Visible = true;
-                }
+                this.lblWarnTxt0.Visible = true;
             }
-            else if (this.txtNombreProfesor.Visible && this.txtIDProfesor.Visible)
-            {
-                if (this.txtNombreProfesor.Text != "" && this.txtIDProfesor.Text.Length == 7)
-                {
-                    this.CambiarProfesor.Visible = false;
-                    this.ConfirmarProf.Visible = true;
-                    this.lblConfirmarNombreProf.Visible = true;
-                    this.lblConfirmarIDProf.Visible = true;
-                    lblConfirmarNombreProf.Text = $"Nombre del profesor: {txtNombreProfesor.Text.ToString().ToUpper()}";
-                    lblConfirmarIDProf.Text = $"ID del profesor: {txtIDProfesor.Text.ToString()}";
-                }
-                else
-                {
-                    this.lblWarnTxt1.Visible = true;
-                }
-            }
+            this.btnVolverMenuPrincipalProf.Visible = false;
         }              
         protected void btnConfirmarProf_Click(object sender, EventArgs e)
         {
@@ -471,17 +333,14 @@ namespace WebApplication1
             this.lblWarnradp.Visible = false;
             this.lblWarnTxt1.Visible = false;
             ProfesoresTableAdapter profesoresTableAdapter = new ProfesoresTableAdapter();
-            //profesoresTableAdapter.ChangeProfName(txtNombreProfesor.Text.ToString().ToUpper(), ViewState["IdEditarProf"].ToString());
             if ((bool)ViewState["nombreprof"])
             {
                 profesoresTableAdapter.ChangeProfName(txtNombreProfesor.Text.ToString().ToUpper(), ViewState["IdEditarProf"].ToString());
             }
-            if ((bool)ViewState["IDprof"])
-            {
-                profesoresTableAdapter.ChangeProfID(txtIDProfesor.Text.ToString(), ViewState["IdEditarProf"].ToString());
-            }
-            //ViewState["IdEditarProf"] = null;
-            Response.Redirect("Administradores");
+
+            this.lblEdicionProf.Visible = true;
+            this.btnCancelarProf.Visible = false;
+            this.btnVolverMenuPrincipalProf.Visible = true;
         }
         protected void btnCancelarProf_Click(object sender, EventArgs e)
         {
@@ -489,7 +348,10 @@ namespace WebApplication1
             this.CambiarProfesor.Visible = true;
             this.lblWarnTxt1.Visible=false;
         }
-
+        protected void btnVolverMenuPrincipalProf_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Administradores");
+        }
 
         //asignaturas
         protected void btnVolverAsignatura_Click(object sender, EventArgs e)
@@ -794,5 +656,7 @@ namespace WebApplication1
             ModCal.Visible = true;
 
         }
+
+        
     }
 }

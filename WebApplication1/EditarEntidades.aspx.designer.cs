@@ -202,24 +202,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox txtNombreEstudiante;
         
         /// <summary>
-        /// txtIDEst control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtIDEst;
-        
-        /// <summary>
-        /// txtIDEstudiante control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIDEstudiante;
-        
-        /// <summary>
         /// btnModificarEstudiante control.
         /// </summary>
         /// <remarks>
@@ -256,15 +238,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label lblConfirmarNombreEst;
         
         /// <summary>
-        /// lblConfirmarIDEst control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblConfirmarIDEst;
-        
-        /// <summary>
         /// btnConfirmarEst control.
         /// </summary>
         /// <remarks>
@@ -281,6 +254,24 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelarEst;
+        
+        /// <summary>
+        /// lblEdicionEst control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEdicionEst;
+        
+        /// <summary>
+        /// btnVolverMenuPrincipalEst control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolverMenuPrincipalEst;
         
         /// <summary>
         /// profesor control.
@@ -427,24 +418,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox txtNombreProfesor;
         
         /// <summary>
-        /// idprof control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl idprof;
-        
-        /// <summary>
-        /// txtIDProfesor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIDProfesor;
-        
-        /// <summary>
         /// btnModificarProfesor control.
         /// </summary>
         /// <remarks>
@@ -481,15 +454,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label lblConfirmarNombreProf;
         
         /// <summary>
-        /// lblConfirmarIDProf control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblConfirmarIDProf;
-        
-        /// <summary>
         /// btnConfirmarProf control.
         /// </summary>
         /// <remarks>
@@ -506,6 +470,24 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelarProf;
+        
+        /// <summary>
+        /// lblEdicionProf control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEdicionProf;
+        
+        /// <summary>
+        /// btnVolverMenuPrincipalProf control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolverMenuPrincipalProf;
         
         /// <summary>
         /// asignatura control.
