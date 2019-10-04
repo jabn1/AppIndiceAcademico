@@ -16,25 +16,31 @@
         </div>
         <h3>Portal de administradores</h3>
         <p></p>
+        <p>&nbsp;</p>
+            <p>
+                <asp:Button ID="BtAgregarEnt" runat="server" Text="Agregar entidad" Width="200px" OnClick="BtAgregarEnt_Click" />
+            </p>
+        <p>&nbsp;</p>
         <p>
         <asp:Button ID="btnEditar" runat="server" OnClick="btnEditar_Click" Text="Editar entidad" Width="200px" />
         </p>
         <p>&nbsp;</p>
-            <p>
-                <asp:Button ID="BtReportes" runat="server" Text="Consulta de datos y reportes" Width="200px" OnClick="BtReportes_Click" />
-            </p>
-            <p>&nbsp;</p>
-            <p>
-                <asp:Button ID="BtAgregarEnt" runat="server" Text="Agregar entidad" Width="200px" OnClick="BtAgregarEnt_Click" />
-            </p>
-            <p>&nbsp;</p>
+        
             <p>
                 <asp:Button ID="BtEliminarEnt" runat="server" Text="Eliminar entidad" Width="200px" OnClick="BtEliminarEnt_Click" />
             </p>
+        <p>&nbsp;</p>
+            <p>
+                <asp:Button ID="BtReportes" runat="server" Text="Consulta de datos y reportes" Width="200px" OnClick="BtReportes_Click" />
+            </p>
+            
+            
             <p>&nbsp;</p>
             <p>
                 <asp:Button ID="BtControl" runat="server" Text="Control de usuarios" Width="200px" OnClick="BtControl_Click" />
             </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
         <asp:Label runat="server" Text="Nombre: "></asp:Label>
         <asp:Label ID="nomAdmin" runat="server" Text=""></asp:Label>
         

@@ -49,24 +49,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button btLogout;
         
         /// <summary>
-        /// btnEditar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditar;
-        
-        /// <summary>
-        /// BtReportes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtReportes;
-        
-        /// <summary>
         /// BtAgregarEnt control.
         /// </summary>
         /// <remarks>
@@ -76,6 +58,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button BtAgregarEnt;
         
         /// <summary>
+        /// btnEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditar;
+        
+        /// <summary>
         /// BtEliminarEnt control.
         /// </summary>
         /// <remarks>
@@ -83,6 +74,15 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtEliminarEnt;
+        
+        /// <summary>
+        /// BtReportes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtReportes;
         
         /// <summary>
         /// BtControl control.

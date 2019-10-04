@@ -55,7 +55,7 @@ namespace WebApplication1
             autenticacion = new AutenticacionTableAdapter();
             if (idEst != null && nombreEst != null && carreraEst != null && contraEst != null)
             {
-                estudiantes.Insert(idEst.Text, nombreEst.Text, carreraEst.Text, "", 0, "", 0);
+                estudiantes.Insert(idEst.Text, nombreEst.Text, carreraEst.Text, "0.00", 0, "Sin Honor", 0);
                 autenticacion.Insert(idEst.Text, contraEst.Text, null, "estudiante");
             }
             divEst.Visible = false;

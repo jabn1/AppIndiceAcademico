@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="wcOpciones" runat="server" visible="false">
         <asp:Button ID="BtMenu" runat="server" Text="Menu" OnClick="BtMenu_Click" />
-        <h3>Consulata de datos y reportes</h3>
+        <h3>Consulta de datos y reportes</h3>
         <p></p>
         <h4>Elegir una opcion:</h4>
         <asp:DropDownList ID="DropDownList1" runat="server" Width="201px"></asp:DropDownList>

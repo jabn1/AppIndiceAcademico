@@ -29,7 +29,7 @@ namespace WebApplication1
 
 
                     DropDownList1.Items.Clear();
-                    DropDownList1.Items.Add(new ListItem("Elejir tipo", ""));
+                    DropDownList1.Items.Add(new ListItem("Elegir tipo", ""));
                     DropDownList1.Items.Add(new ListItem("Listado de estudiantes", TiposReporte.ListadoEst.ToString()));
                     DropDownList1.Items.Add(new ListItem("Listado de profesores", TiposReporte.ListadoProf.ToString()));
                     DropDownList1.Items.Add(new ListItem("Listado de asignaturas", TiposReporte.ListadoAsig.ToString()));
