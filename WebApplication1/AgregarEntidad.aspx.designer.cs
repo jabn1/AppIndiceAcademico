@@ -22,31 +22,40 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl div1;
         
         /// <summary>
-        /// Button1 control.
+        /// btnVolverAgr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnVolverAgr;
         
         /// <summary>
-        /// Button2 control.
+        /// btnAgregarEst control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btnAgregarEst;
         
         /// <summary>
-        /// Button3 control.
+        /// btnAgregarProf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button btnAgregarProf;
+        
+        /// <summary>
+        /// btnAgregarAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregarAsig;
         
         /// <summary>
         /// divEst control.
@@ -58,13 +67,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEst;
         
         /// <summary>
-        /// idEst control.
+        /// btnVolverEst control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idEst;
+        protected global::System.Web.UI.WebControls.Button btnVolverEst;
         
         /// <summary>
         /// nombreEst control.
@@ -76,15 +85,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox nombreEst;
         
         /// <summary>
-        /// carreraEst control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox carreraEst;
-        
-        /// <summary>
         /// contraEst control.
         /// </summary>
         /// <remarks>
@@ -94,13 +94,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox contraEst;
         
         /// <summary>
-        /// guardarEst control.
+        /// carreraEst control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button guardarEst;
+        protected global::System.Web.UI.WebControls.TextBox carreraEst;
         
         /// <summary>
         /// divProf control.
@@ -112,13 +112,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divProf;
         
         /// <summary>
-        /// idProf control.
+        /// btnVolverProf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idProf;
+        protected global::System.Web.UI.WebControls.Button btnVolverProf;
         
         /// <summary>
         /// nombreProf control.
@@ -139,15 +139,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox contraProf;
         
         /// <summary>
-        /// guardarProf control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button guardarProf;
-        
-        /// <summary>
         /// divAsig control.
         /// </summary>
         /// <remarks>
@@ -155,6 +146,15 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divAsig;
+        
+        /// <summary>
+        /// btnVolverAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolverAsig;
         
         /// <summary>
         /// claveAsig control.
@@ -184,12 +184,111 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox creditosAsig;
         
         /// <summary>
-        /// guardarAsig control.
+        /// divbtnAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button guardarAsig;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divbtnAgregar;
+        
+        /// <summary>
+        /// btnAgregar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregar;
+        
+        /// <summary>
+        /// Seguro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Seguro;
+        
+        /// <summary>
+        /// lblSeguroEntidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSeguroEntidad;
+        
+        /// <summary>
+        /// lblNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNombre;
+        
+        /// <summary>
+        /// lblContraseña control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblContraseña;
+        
+        /// <summary>
+        /// lblCarrera control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCarrera;
+        
+        /// <summary>
+        /// lblCreditos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCreditos;
+        
+        /// <summary>
+        /// btnSeguroAgregar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSeguroAgregar;
+        
+        /// <summary>
+        /// btnVolverEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolverEditar;
+        
+        /// <summary>
+        /// lblEntidadAgregada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEntidadAgregada;
+        
+        /// <summary>
+        /// btnVolverMenuPrincipal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolverMenuPrincipal;
     }
 }

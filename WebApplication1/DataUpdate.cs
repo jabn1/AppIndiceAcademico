@@ -42,5 +42,11 @@ namespace WebApplication1
             EstudiantesTableAdapter estudiantes = new EstudiantesTableAdapter();
             estudiantes.UpdateQueryDatosEst(indice.ToString("0.00"),creditosAcumulados,honor,cantidadCalificacion,idEstudiante);
         }
+        public string GetID()
+        {
+            IdUsuariosTableAdapter idUsuariosTableAdapter = new IdUsuariosTableAdapter();
+            idUsuariosTableAdapter.Insert();
+            return idUsuariosTableAdapter.GetData().ToString();
+        }
     }
 }
