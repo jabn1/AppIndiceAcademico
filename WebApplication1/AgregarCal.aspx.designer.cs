@@ -31,6 +31,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button btVolver;
         
         /// <summary>
+        /// LblElegirAsig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblElegirAsig;
+        
+        /// <summary>
         /// RadioButtonList1 control.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAsig;
+        
+        /// <summary>
+        /// LblElegirEst control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblElegirEst;
         
         /// <summary>
         /// RadioButtonList2 control.
@@ -229,22 +247,22 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label lblValor;
         
         /// <summary>
-        /// btConfirmar1 control.
+        /// wcAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btConfirmar1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wcAgregar;
         
         /// <summary>
-        /// btConfirmar2 control.
+        /// BtAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btConfirmar2;
+        protected global::System.Web.UI.WebControls.Button BtAgregar;
         
         /// <summary>
         /// btRetCal control.
@@ -263,5 +281,32 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btCancelar;
+        
+        /// <summary>
+        /// subWcFinal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subWcFinal;
+        
+        /// <summary>
+        /// btConfirmar1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btConfirmar1;
+        
+        /// <summary>
+        /// btConfirmar2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btConfirmar2;
     }
 }

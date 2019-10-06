@@ -49,5 +49,27 @@ namespace WebApplication1
             //return idUsuariosTableAdapter.GetData()[0].ToString();
             return idUsuariosTableAdapter.scope().ToString();
         }
+
+        public static void UpdateEnUsoEntities(string idEst, string idProf, string clave)
+        {
+            var estudiantes = new EstudiantesTableAdapter();
+            var profesores = new ProfesoresTableAdapter();
+            var asignaturas = new AsignaturasTableAdapter();
+
+            if(estudiantes.GetStudentsNotInUses(idEst).ToString() == "no")
+            {
+                estudiantes.UpdateEnUsoEst("si", idEst);
+            }
+            if(profesores.GetUse(idProf).ToString() == "no")
+            {
+                profesores.UpdateEnUsoProf("si", idProf);
+            }
+            if (asignaturas.GetUse(clave).ToString() == "no")
+            {
+                asignaturas.UpdateEnUsoAsig("si",clave);
+            }
+        }
+
+
     }
 }

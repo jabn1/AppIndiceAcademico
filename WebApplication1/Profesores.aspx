@@ -18,12 +18,13 @@
     </div>
     <h3>Portal de Profesores</h3>    
     <div>
-        <p></p>
-        <asp:Button ID="btReporte" runat="server" Text="Reporte Calificaciones" OnClick="btReporte_Click" Width="200px" />
+        <p>
+        <asp:Button ID="btAddCal" runat="server" Text="Agregar Calificacion" OnClick="btAddCal_Click" Width="200px" />
+        </p>
         <p></p>
     </div> 
     <div>
-        <asp:Button ID="btAddCal" runat="server" Text="Agregar Calificacion" OnClick="btAddCal_Click" Width="200px" />
+        <asp:Button ID="btReporte" runat="server" Text="Reporte Calificaciones" OnClick="btReporte_Click" Width="200px" />
     </div>
     <div>
         <p></p>

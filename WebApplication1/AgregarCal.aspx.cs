@@ -78,9 +78,18 @@ namespace WebApplication1
             int valorCal;
             if(int.TryParse(tbCal.Text,out valorCal) && valorCal <= 100 && valorCal >= 0)
             {
+                string alpha = "";
+                var cal = valorCal;
+                if (cal <= 100 && cal >= 90) alpha = "A";
+                else if (cal <= 89 && cal >= 80) alpha = "B";
+                else if (cal <= 79 && cal >= 70) alpha = "C";
+                else if (cal <= 69 && cal >= 60) alpha = "D";
+                else if (cal <= 59 && cal >= 0) alpha = "F";
+                ViewState["alpha"] = alpha;
+
                 lblAsig3.Text = lblAsig.Text;
                 lblEst2.Text = lblEst.Text;
-                lblValor.Text = "Valor de calificacion: " + valorCal.ToString();
+                lblValor.Text = "Calificacion: " + valorCal.ToString() + " - " + alpha;
                 wcCalificar.Visible = false;
                 wcConfirmar.Visible = true;
                 ViewState["valorCal"] = valorCal;
@@ -93,28 +102,26 @@ namespace WebApplication1
         }
         protected bool InsertCal(int cal)
         {
-            string alpha;
+            
             CalificacionesTableAdapter calificaciones = new CalificacionesTableAdapter();
-            if (cal <= 100 && cal >= 90) alpha = "A";
-            else if (cal <= 89 && cal >= 80) alpha = "B";
-            else if (cal <= 79 && cal >= 70) alpha = "C";
-            else if (cal <= 69 && cal >= 60) alpha = "D";
-            else if (cal <= 59 && cal >= 0) alpha = "F";
-            else return false;
-            calificaciones.Insert(RadioButtonList2.SelectedValue,Session["IdProf"].ToString(),cal,alpha,RadioButtonList1.SelectedValue);
+            
+            calificaciones.Insert(RadioButtonList2.SelectedValue,Session["IdProf"].ToString(),cal, ViewState["alpha"].ToString(), RadioButtonList1.SelectedValue);
+
+
+            DataUpdate.UpdateEnUsoEntities(RadioButtonList2.SelectedValue, Session["IdProf"].ToString(), RadioButtonList1.SelectedValue);
+
             return true;
         }
         protected void btConfirmar1_Click(object sender, EventArgs e)
         {
-            InsertCal((int)ViewState["valorCal"]);
-            DataUpdate.UpdateDatosEstudiante(RadioButtonList2.SelectedValue);
+            
+            
             Response.Redirect("Profesores");
         }
 
         protected void btConfirmar2_Click(object sender, EventArgs e)
         {
-            InsertCal((int)ViewState["valorCal"]);
-            DataUpdate.UpdateDatosEstudiante(RadioButtonList2.SelectedValue);
+            
             Response.Redirect("AgregarCal");
         }
 
@@ -131,6 +138,7 @@ namespace WebApplication1
 
         protected void btRetEst_Click(object sender, EventArgs e)
         {
+           
             wcCalificar.Visible = false;
             wcElegirEst.Visible = true;
 
@@ -138,6 +146,7 @@ namespace WebApplication1
 
         protected void btRetAsig_Click(object sender, EventArgs e)
         {
+            LblElegirEst.Text = "";
             wcElegirEst.Visible = false;
             wcElegirAsig.Visible = true;
 
@@ -146,6 +155,25 @@ namespace WebApplication1
         protected void tbCal_TextChanged(object sender, EventArgs e)
         {
             lblWarn.Text = "";
+        }
+
+        protected void BtAgregar_Click(object sender, EventArgs e)
+        {
+            InsertCal((int)ViewState["valorCal"]);
+            DataUpdate.UpdateDatosEstudiante(RadioButtonList2.SelectedValue);
+            
+            wcAgregar.Visible = false;
+            subWcFinal.Visible = true;
+        }
+
+        protected void RadioButtonList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LblElegirEst.Text = RadioButtonList2.SelectedItem.Text;
+        }
+
+        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LblElegirAsig.Text = RadioButtonList1.SelectedItem.Text;
         }
     }
 }

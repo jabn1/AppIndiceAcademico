@@ -49,15 +49,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button btLogout;
         
         /// <summary>
-        /// btReporte control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btReporte;
-        
-        /// <summary>
         /// btAddCal control.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,15 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btAddCal;
+        
+        /// <summary>
+        /// btReporte control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btReporte;
         
         /// <summary>
         /// nomProf control.
