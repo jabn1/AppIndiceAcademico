@@ -26,7 +26,19 @@
         <h4>Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="nombreEst" runat="server"></asp:TextBox></h4>
         
         <h4>Contraseña: <asp:TextBox ID="contraEst" runat="server"></asp:TextBox></h4>
-        <h4>Carrera:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="carreraEst" runat="server"></asp:TextBox></h4>
+        <h4>Carrera:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <asp:DropDownList ID="ListCarreras" runat="server">
+                <asp:ListItem Value="IDS"> Ingenieria de Software </asp:ListItem>
+                <asp:ListItem Value="INS"> Ingenieria en Sistemas </asp:ListItem>
+                <asp:ListItem Value="IND"> Ingenieria Industrial </asp:ListItem>
+                <asp:ListItem Value="CIV"> Ingenieria Civil </asp:ListItem>
+                <asp:ListItem Value="ELE"> Ingenieria Electrica </asp:ListItem>
+                <asp:ListItem Value="MEC"> Ingenieria Mecanica </asp:ListItem>
+                <asp:ListItem Value="IMC"> Ingenieria Mecatronica </asp:ListItem>
+                <asp:ListItem Value="ECO"> Economia </asp:ListItem>
+                <asp:ListItem Value="MED"> Medicina </asp:ListItem>
+            </asp:DropDownList>  
+        </h4>
        <p></p>
         
     </div>
@@ -53,6 +65,7 @@
         <h4>Nombre:&nbsp;&nbsp; <asp:TextBox ID="nombreAsig" runat="server"></asp:TextBox></h4>
         <h4>Creditos:&nbsp; <asp:TextBox ID="creditosAsig" runat="server"></asp:TextBox></h4>
     </div>
+    
 
   <div id="divbtnAgregar" runat="server" visible="true">
       <p></p>
@@ -68,11 +81,13 @@
    <p></p>
       <p></p>  
         <h4>
+        <asp:Label ID="lblId" runat="server" Text=""></asp:Label>
+        </h4>
+        <h4>
         <asp:Label ID="lblNombre" runat="server" Text=""></asp:Label>
         </h4> 
         <h4>
         <asp:Label ID="lblContraseña" runat="server" Text=""></asp:Label>
-
         </h4>
         <h4>
         <asp:Label ID="lblCarrera" runat="server" Text=""></asp:Label>
@@ -94,7 +109,9 @@
         <asp:Label ID="lblEntidadAgregada" runat="server" Text=""></asp:Label>
         </h3>
         <p></p>
-        <asp:Button ID="btnVolverMenuPrincipal" runat="server" Text="Volver al menu principal" Visible="false" />
+        <asp:Button ID="BtnVolverAgregar" runat="server" Text="Volver al menu agregar" OnClick="BtnVolverAgregar_Click" />
+        <br />
+        <asp:Button ID="btnVolverMenuPrincipal" runat="server" Text="Volver al menu principal" Visible="false" OnClick="btnVolverMenuPrincipal_Click" />
     </div>
 
 </asp:Content>

@@ -36,6 +36,9 @@ namespace WebApplication1
         protected void Button1_Click(object sender, EventArgs e)
         {
             div1.Visible = false;
+            ViewState["elimEst"] = true;
+            ViewState["elimProf"] = false;
+            ViewState["elimAsig"] = false;
             Label1.Text = "";
 
             RadioButtonListEst.Items.Clear();
@@ -50,6 +53,9 @@ namespace WebApplication1
         protected void Button2_Click(object sender, EventArgs e)
         {
             div1.Visible = false;
+            ViewState["elimEst"] = false;
+            ViewState["elimProf"] = true;
+            ViewState["elimAsig"] = false;
             Label2.Text = "";
 
             RadioButtonListProf.Items.Clear();
@@ -64,6 +70,9 @@ namespace WebApplication1
         protected void Button3_Click(object sender, EventArgs e)
         {
             div1.Visible = false;
+            ViewState["elimEst"] = false;
+            ViewState["elimProf"] = false;
+            ViewState["elimAsig"] = true;
             Label3.Text = "";
 
             RadioButtonListAsig.Items.Clear();
@@ -75,124 +84,141 @@ namespace WebApplication1
             divAsig.Visible = true;
         }
 
-        protected void regresar_Click(object sender, EventArgs e)
-        {
-            divAsig.Visible = false;
-            divProf.Visible = false;
-            divEst.Visible = false;
-            divConfEst.Visible = false;
-            divConfProf.Visible = false;
-            divConfAsig.Visible = false;
-            div1.Visible = true;
-        }
         protected void TryEliminarEst_Click(object sender, EventArgs e)
         {
-            divEst.Visible = false;
-            div1.Visible = false;
+            if (RadioButtonListEst.SelectedIndex != -1)
+            {
+                divEst.Visible = false;
+                div1.Visible = false;
 
-            Label4.Text = RadioButtonListEst.SelectedItem.Text.ToString();
+                Label5.Text = RadioButtonListEst.SelectedItem.Text.ToString();
 
-            divConfEst.Visible = true;
+                divConf.Visible = true;
+            }
+            else
+                Label1.Text = "Seleccione un estudiante";
 
         }
         protected void TryEliminarProf_Click(object sender, EventArgs e)
         {
-            divProf.Visible = false;
-            div1.Visible = false;
+            if (RadioButtonListProf.SelectedIndex != -1)
+            {
+                divProf.Visible = false;
+                div1.Visible = false;
 
-            Label5.Text = RadioButtonListProf.SelectedItem.Text.ToString();
+                Label5.Text = RadioButtonListProf.SelectedItem.Text.ToString();
 
-            divConfProf.Visible = true;
+                divConf.Visible = true;
+            }
+            else
+                Label2.Text = "Seleccione un profesor";
 
         }
         protected void TryEliminarAsig_Click(object sender, EventArgs e)
         {
-            divAsig.Visible = false;
-            div1.Visible = false;
-
-            Label6.Text = RadioButtonListAsig.SelectedItem.Text.ToString();
-
-            divConfAsig.Visible = true;
-
-        }
-
-        protected void EliminarEst_Click(object sender, EventArgs e)
-        {
-            int count1 = 0;
-
-            foreach (CalificacionesRow calificacion in calificaciones.GetData().Rows)
+            if (RadioButtonListAsig.SelectedIndex != -1)
             {
-                if (calificacion["IdEstudiante"].ToString() == RadioButtonListEst.SelectedValue.ToString())
-                    count1++;
-            }
-            if (count1 == 0)
-            {
-                estudiantes.Delete(RadioButtonListEst.SelectedValue);
-                autenticacion.Delete(RadioButtonListEst.SelectedValue);
-                divEst.Visible = false;
-                divConfEst.Visible = false;
-                div1.Visible = true;
-            }
-            else
-            {
-                div1.Visible = false;
-                divConfEst.Visible = false;
-                divEst.Visible = true;
-                Label1.Text = "No esta permitido, el estudiante ya tiene calificaciones";
-            }   
-        }
-
-        protected void EliminarProf_Click(object sender, EventArgs e)
-        {
-            int count2 = 0;
-
-            foreach (CalificacionesRow calificacion in calificaciones.GetData().Rows)
-            {
-                if (calificacion["IdProfesor"].ToString() == RadioButtonListProf.SelectedValue.ToString())
-                    count2++;
-            }
-            if (count2 == 0)
-            {
-                profesores.Delete(RadioButtonListProf.SelectedValue);
-                autenticacion.Delete(RadioButtonListProf.SelectedValue);
-                divProf.Visible = false;
-                divConfProf.Visible = false;
-                div1.Visible = true;
-            }
-            else
-            {
-                div1.Visible = false;
-                divConfProf.Visible = false;
-                divProf.Visible = true;
-                Label2.Text = "No esta permitido, el profesor ya publicó calificaciones";
-            }   
-        }
-
-        protected void EliminarAsig_Click(object sender, EventArgs e)
-        {
-            int count3 = 0;
-
-            foreach (CalificacionesRow calificacion in calificaciones.GetData().Rows)
-            {
-                if (calificacion["ClaveAsignatura"].ToString() == RadioButtonListAsig.SelectedValue.ToString())
-                    count3++;
-            }
-            if (count3 == 0)
-            {
-                asignaturas.Delete(RadioButtonListAsig.SelectedValue);
                 divAsig.Visible = false;
-                divConfAsig.Visible = false;
-                div1.Visible = true;
+                div1.Visible = false;
+
+                Label5.Text = RadioButtonListAsig.SelectedItem.Text.ToString();
+
+                divConf.Visible = true;
             }
             else
-            {
-                div1.Visible = false;
-                divConfAsig.Visible = false;
-                divAsig.Visible = true;
-                Label3.Text = "No esta permitido, la asignatura ya tiene calificaciones";
-            }
+                Label3.Text = "Seleccione una asignatura";
         }
 
-        
+        protected void Eliminar_Click(object sender, EventArgs e)
+        {
+            if ((bool)ViewState["elimEst"] == true)
+            {
+                int count1 = 0;
+
+                foreach (CalificacionesRow calificacion in calificaciones.GetData().Rows)
+                {
+                    if (calificacion["IdEstudiante"].ToString() == RadioButtonListEst.SelectedValue.ToString())
+                        count1++;
+                }
+                if (count1 == 0)
+                {
+                    estudiantes.Delete(RadioButtonListEst.SelectedValue);
+                    autenticacion.Delete(RadioButtonListEst.SelectedValue);
+                    divEst.Visible = false;
+                    divConf.Visible = false;
+                    lblEntidadEliminada.Text = "Estudiante eliminado";
+                    terminado.Visible = true;
+                }
+                else
+                {
+                    div1.Visible = false;
+                    divConf.Visible = false;
+                    divEst.Visible = true;
+                    Label1.Text = "No esta permitido, el estudiante ya tiene calificaciones";
+                }
+            }
+            else if ((bool)ViewState["elimProf"] == true)
+            {
+                int count2 = 0;
+
+                foreach (CalificacionesRow calificacion in calificaciones.GetData().Rows)
+                {
+                    if (calificacion["IdProfesor"].ToString() == RadioButtonListProf.SelectedValue.ToString())
+                        count2++;
+                }
+                if (count2 == 0)
+                {
+                    profesores.Delete(RadioButtonListProf.SelectedValue);
+                    autenticacion.Delete(RadioButtonListProf.SelectedValue);
+                    divProf.Visible = false;
+                    divConf.Visible = false;
+                    lblEntidadEliminada.Text = "Profesor eliminado";
+                    terminado.Visible = true;
+                }
+                else
+                {
+                    div1.Visible = false;
+                    divConf.Visible = false;
+                    divProf.Visible = true;
+                    Label2.Text = "No esta permitido, el profesor ya publicó calificaciones";
+                }
+            }
+            else if ((bool)ViewState["elimAsig"] == true)
+            {
+                int count3 = 0;
+
+                foreach (CalificacionesRow calificacion in calificaciones.GetData().Rows)
+                {
+                    if (calificacion["ClaveAsignatura"].ToString() == RadioButtonListAsig.SelectedValue.ToString())
+                        count3++;
+                }
+                if (count3 == 0)
+                {
+                    asignaturas.Delete(RadioButtonListAsig.SelectedValue);
+                    divAsig.Visible = false;
+                    divConf.Visible = false;
+                    lblEntidadEliminada.Text = "Asignatura eliminada";
+                    terminado.Visible = true;
+                }
+                else
+                {
+                    div1.Visible = false;
+                    divConf.Visible = false;
+                    divAsig.Visible = true;
+                    Label3.Text = "No esta permitido, la asignatura ya tiene calificaciones";
+                }
+
+            }
+               
+        }
+
+        protected void BtnVolverAgregar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EliminarEntidad");
+        }
+        protected void btnVolverMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Administradores");
+        }
     }
 }

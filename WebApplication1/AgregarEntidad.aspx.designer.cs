@@ -94,13 +94,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox contraEst;
         
         /// <summary>
-        /// carreraEst control.
+        /// ListCarreras control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox carreraEst;
+        protected global::System.Web.UI.WebControls.DropDownList ListCarreras;
         
         /// <summary>
         /// divProf control.
@@ -220,6 +220,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Label lblSeguroEntidad;
         
         /// <summary>
+        /// lblId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblId;
+        
+        /// <summary>
         /// lblNombre control.
         /// </summary>
         /// <remarks>
@@ -281,6 +290,15 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEntidadAgregada;
+        
+        /// <summary>
+        /// BtnVolverAgregar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnVolverAgregar;
         
         /// <summary>
         /// btnVolverMenuPrincipal control.

@@ -68,56 +68,6 @@ namespace WebApplication1
 
         }
 
-        protected void guardarEst_Click(object sender, EventArgs e)
-        {
-            this.btnAgregar.Visible = true;
-            estudiantes = new EstudiantesTableAdapter();
-            autenticacion = new AutenticacionTableAdapter();
-            if (nombreEst != null && carreraEst != null && contraEst != null)
-            {
-                string id = dataUpdate.GetID();
-                this.btnAgregar.Visible = true;
-                estudiantes.Insert(id,nombreEst.Text, carreraEst.Text, "0.00", 0, "Sin Honor", 0);
-                autenticacion.Insert(id, contraEst.Text, null, "estudiante");
-            }
-            divEst.Visible = false;
-            div1.Visible = true;
-
-        }
-
-        protected void guardarProf_Click(object sender, EventArgs e)
-        {
-
-            profesores = new ProfesoresTableAdapter();
-            autenticacion = new AutenticacionTableAdapter();
-            if (nombreProf != null && contraProf != null)
-            {
-                string id = dataUpdate.GetID();
-                this.btnAgregar.Visible = true;
-                profesores.Insert(id, nombreProf.Text);
-                autenticacion.Insert(id, contraProf.Text, null, "profesor");
-            }
-            divProf.Visible = false;
-            div1.Visible = true;
-        }
-
-        protected void guardarAsig_Click(object sender, EventArgs e)
-        {
-            this.btnAgregar.Visible = true;
-            asignaturas = new AsignaturasTableAdapter();
-            if (claveAsig != null && nombreAsig != null && creditosAsig != null)
-            {                
-                this.btnAgregar.Visible = true;
-                asignaturas.Insert(claveAsig.Text, nombreAsig.Text, int.Parse(creditosAsig.Text));
-            }
-            divAsig.Visible = false;
-            div1.Visible = true;
-
-        }
-
-
-
-
         protected void btVolverAgr_Click(object sender, EventArgs e)
         {
             ViewState["agrEst"] = false;
@@ -130,27 +80,29 @@ namespace WebApplication1
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            IdUsuariosTableAdapter idUsuariosTableAdapter = new IdUsuariosTableAdapter();
+
             this.btnVolverMenuPrincipal.Visible = false;
             this.lblEntidadAgregada.Visible = false;
             if ((bool)ViewState["agrEst"] == true)
             {
-                if (this.nombreEst.Text != "" && this.contraEst.Text != "" && this.carreraEst.Text != "")
+                if (this.nombreEst.Text != "" && this.contraEst.Text != "")
                 {
                     this.btnAgregar.Visible = false;
                     this.divEst.Visible = false;
                     this.Seguro.Visible = true;
                     this.lblSeguroEntidad.Text = "Seguro que desea agregar al estudiante?";
 
+                    this.lblId.Text = $"ID: {Convert.ToInt32(idUsuariosTableAdapter.scope().ToString())+1}";
                     this.lblNombre.Text = $"Nombre: {this.nombreEst.Text.ToString().ToUpper()}";
                     this.lblContraseña.Text = $"Contraseña: {this.contraEst.Text.ToString()}";
-                    this.lblCarrera.Text = $"Carrera: {this.carreraEst.Text.ToString().ToUpper()}";
+                    this.lblCarrera.Text = $"Carrera: {this.ListCarreras.SelectedValue}";
 
+                    this.lblId.Visible = true;
                     this.lblNombre.Visible = true;
                     this.lblContraseña.Visible = true;
                     this.lblCarrera.Visible = true;
                     this.lblCreditos.Visible = false;
-
-
 
                 }
                 else
@@ -166,12 +118,16 @@ namespace WebApplication1
                     this.divProf.Visible = false;
                     this.Seguro.Visible = true;
                     this.lblSeguroEntidad.Text = "Seguro que desea agregar al profesor?";
+
+                    this.lblId.Text = $"ID: {Convert.ToInt32(idUsuariosTableAdapter.scope().ToString()) + 1}";
+                    this.lblNombre.Text = $"Nombre: {this.nombreProf.Text.ToString().ToUpper()}";
+                    this.lblContraseña.Text = $"Contraseña: {this.contraProf.Text.ToString()}";
+
+                    this.lblId.Visible = true;
                     this.lblNombre.Visible = true;
                     this.lblContraseña.Visible = true;
                     this.lblCarrera.Visible = false;
                     this.lblCreditos.Visible = false;
-                    this.lblNombre.Text = $"Nombre: {this.nombreProf.Text.ToString().ToUpper()}";
-                    this.lblContraseña.Text = $"Contraseña: {this.contraProf.Text.ToString()}";
 
                 }
                 else
@@ -214,7 +170,7 @@ namespace WebApplication1
             ViewState["agrEst"] = false;
             this.nombreEst.Text = "";
             this.contraEst.Text = "";
-            this.carreraEst.Text = "";
+            //this.carreraEst.Text = "";
         }
 
         protected void btnVolverProf_Click(object sender, EventArgs e)
@@ -263,8 +219,72 @@ namespace WebApplication1
 
         protected void btnSeguroAgregar_Click(object sender, EventArgs e)
         {
+            this.btnVolverEditar.Visible = false;
+            this.btnSeguroAgregar.Visible = false;
             this.btnVolverMenuPrincipal.Visible = true;
             this.lblEntidadAgregada.Visible = true;
+            if ((bool)ViewState["agrEst"] == true)
+            {
+                //this.btnAgregar.Visible = true;
+                estudiantes = new EstudiantesTableAdapter();
+                autenticacion = new AutenticacionTableAdapter();
+                if (nombreEst != null && contraEst != null)
+                {
+                    string id = dataUpdate.GetID();
+                    //this.btnAgregar.Visible = true;
+                    estudiantes.Insert(id, nombreEst.Text.ToUpper(), ListCarreras.SelectedValue, "0.00", 0, "Sin Honor", 0);
+                    autenticacion.Insert(id, contraEst.Text, null, "estudiante");
+                    lblEntidadAgregada.Text = "Estudiante agregado";
+                }
+                else
+                    lblEntidadAgregada.Text = "No se ha podido agregar el estudiante";
+                //divEst.Visible = false;
+                //div1.Visible = true;
+
+            }
+            else if ((bool)ViewState["agrProf"] == true)
+            {
+                profesores = new ProfesoresTableAdapter();
+                autenticacion = new AutenticacionTableAdapter();
+                if (nombreProf != null && contraProf != null)
+                {
+                    string id = dataUpdate.GetID();
+                    //this.btnAgregar.Visible = true;
+                    profesores.Insert(id, nombreProf.Text.ToUpper());
+                    autenticacion.Insert(id, contraProf.Text, null, "profesor");
+                }
+                else
+                    lblEntidadAgregada.Text = "No se ha podido agregar el profesor";
+                //divProf.Visible = false;
+                //div1.Visible = true;
+
+
+            }
+            else if ((bool)ViewState["agrAsig"] == true)
+            {
+                this.btnAgregar.Visible = true;
+                asignaturas = new AsignaturasTableAdapter();
+                if (claveAsig != null && nombreAsig != null && creditosAsig != null)
+                {
+                    //this.btnAgregar.Visible = true;
+                    asignaturas.Insert(claveAsig.Text, nombreAsig.Text.ToUpper(), int.Parse(creditosAsig.Text));
+                }
+                else
+                    lblEntidadAgregada.Text = "No se ha podido agregar la asignatura";
+                //divAsig.Visible = false;
+                //div1.Visible = true;
+
+            }
+        }
+
+        protected void btnVolverMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Administradores");
+        }
+
+        protected void BtnVolverAgregar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AgregarEntidad");
         }
     }
 }

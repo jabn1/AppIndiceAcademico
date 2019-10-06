@@ -46,7 +46,8 @@ namespace WebApplication1
         {
             IdUsuariosTableAdapter idUsuariosTableAdapter = new IdUsuariosTableAdapter();
             idUsuariosTableAdapter.Insert();
-            return idUsuariosTableAdapter.GetData().ToString();
+            //return idUsuariosTableAdapter.GetData()[0].ToString();
+            return idUsuariosTableAdapter.scope().ToString();
         }
     }
 }
