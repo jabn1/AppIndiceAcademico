@@ -19,7 +19,7 @@
 <div id="wcElegirEst" runat="server" visible="false">
         <h3>Agregar Calificacion</h3>
         <asp:Label ID="lblAsig" runat="server"></asp:Label>
-        <h4>Elegir la estudiante:&nbsp; <asp:Label ID="LblElegirEst" runat="server" Text=""></asp:Label>
+        <h4>Elegir el estudiante:&nbsp; <asp:Label ID="LblElegirEst" runat="server" Text=""></asp:Label>
         </h4> 
         <asp:RadioButtonList ID="RadioButtonList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="RadioButtonList2_SelectedIndexChanged" ></asp:RadioButtonList> <p></p>
         <asp:Button ID="btElegirEst" runat="server" Text="Elegir Estudiante" OnClick="btElegirEst_Click" Width="200px" /> <p></p>
