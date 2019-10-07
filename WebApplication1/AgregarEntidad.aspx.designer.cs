@@ -193,6 +193,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divbtnAgregar;
         
         /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
+        
+        /// <summary>
         /// btnAgregar control.
         /// </summary>
         /// <remarks>
@@ -274,15 +283,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button btnSeguroAgregar;
         
         /// <summary>
-        /// btnVolverEditar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVolverEditar;
-        
-        /// <summary>
         /// lblEntidadAgregada control.
         /// </summary>
         /// <remarks>
@@ -290,6 +290,15 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEntidadAgregada;
+        
+        /// <summary>
+        /// btnVolverEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolverEditar;
         
         /// <summary>
         /// BtnVolverAgregar control.

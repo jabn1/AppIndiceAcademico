@@ -68,7 +68,9 @@
     
 
   <div id="divbtnAgregar" runat="server" visible="true">
-      <p></p>
+      <p>
+            <asp:Label ID="lblError" runat="server" Visible = "false"></asp:Label>
+        </p>
 <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
     </div>
 
@@ -96,6 +98,8 @@
         <h4>
         <asp:Label ID="lblCreditos" runat="server" Text=""></asp:Label>
         </h4>
+        <h5>
+            &nbsp;</h5>
 
 
         <p></p>
@@ -103,12 +107,15 @@
         <p></p>
         
         
-        <asp:Button ID="btnVolverEditar" runat="server" Text="Volver a editar" OnClick="btnVolverEditar_Click" />
         <p></p>
         <h3>
         <asp:Label ID="lblEntidadAgregada" runat="server" Text=""></asp:Label>
         </h3>
-        <p></p>
+        <p>&nbsp;</p>
+        
+        
+        <asp:Button ID="btnVolverEditar" runat="server" Text="Volver a editar" OnClick="btnVolverEditar_Click" />
+        <br />
         <asp:Button ID="BtnVolverAgregar" runat="server" Text="Volver al menu agregar" OnClick="BtnVolverAgregar_Click" />
         <br />
         <asp:Button ID="btnVolverMenuPrincipal" runat="server" Text="Volver al menu principal" Visible="false" OnClick="btnVolverMenuPrincipal_Click" />

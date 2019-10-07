@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -88,6 +89,7 @@ namespace WebApplication1
             {
                 if (this.nombreEst.Text != "" && this.contraEst.Text != "")
                 {
+                    lblError.Visible = false;
                     this.btnAgregar.Visible = false;
                     this.divEst.Visible = false;
                     this.Seguro.Visible = true;
@@ -107,13 +109,15 @@ namespace WebApplication1
                 }
                 else
                 {
-
+                    lblError.Text = "No se ha podido agregar al estudiante";
+                    lblError.Visible = true;
                 }
             }
             if((bool)ViewState["agrProf"] == true)
             {
                 if (this.nombreProf.Text != "" && this.contraProf.Text != "")
                 {
+                    lblError.Visible = false;
                     this.btnAgregar.Visible = false;
                     this.divProf.Visible = false;
                     this.Seguro.Visible = true;
@@ -132,34 +136,37 @@ namespace WebApplication1
                 }
                 else
                 {
-
+                    lblError.Text = "No se ha podido agregar el profesor";
+                    lblError.Visible = true;
                 }
 
             }
             if ((bool)ViewState["agrAsig"] == true)
             {
-                if (this.nombreAsig.Text != "" && this.claveAsig.Text != "" && this.creditosAsig.Text!="")
+                asignaturas = new AsignaturasTableAdapter();
+                if (this.nombreAsig.Text != "" && this.claveAsig.Text != "" && this.creditosAsig.Text!="" && Regex.IsMatch(creditosAsig.Text, @"^\d+$") && (Int32)asignaturas.contador(claveAsig.Text.ToString())==0)
                 {
+                    lblError.Visible = false;
                     this.btnAgregar.Visible = false;
                     this.divAsig.Visible = false;
                     this.Seguro.Visible = true;
                     this.lblSeguroEntidad.Text = "Seguro que desea agregar la asignatura?";
                     this.lblNombre.Visible = true;
-                    this.lblContraseña.Visible =false;
+                    this.lblContraseña.Visible =true;
                     this.lblCarrera.Visible =false;
                     this.lblCreditos.Visible = true;
 
                     this.lblNombre.Text = $"Nombre: {this.nombreAsig.Text.ToString().ToUpper()}";
-                    this.lblContraseña.Text = $"Clave: {this.claveAsig.Text.ToString()}";
+                    this.lblContraseña.Text = $"Clave: {this.claveAsig.Text.ToString().ToUpper()}";
                     this.lblCreditos.Text = $"No. de creditos: {this.creditosAsig.Text.ToString()}";
 
                 }
                 else
                 {
-
+                    lblError.Text = $"No se ha podido agregar la asignatura";
+                    lblError.Visible = true;
                 }
             }
-
         }
         //Volver
         protected void btnVolverEst_Click(object sender, EventArgs e)
@@ -262,15 +269,18 @@ namespace WebApplication1
             }
             else if ((bool)ViewState["agrAsig"] == true)
             {
-                this.btnAgregar.Visible = true;
                 asignaturas = new AsignaturasTableAdapter();
-                if (claveAsig != null && nombreAsig != null && creditosAsig != null)
+                if (claveAsig != null && nombreAsig != null && creditosAsig != null && Regex.IsMatch(creditosAsig.Text, @"^\d+$"))
                 {
                     //this.btnAgregar.Visible = true;
-                    asignaturas.Insert(claveAsig.Text, nombreAsig.Text.ToUpper(), int.Parse(creditosAsig.Text));
+                    asignaturas.Insert(claveAsig.Text.ToUpper(), nombreAsig.Text.ToUpper(), int.Parse(creditosAsig.Text));
                 }
                 else
                     lblEntidadAgregada.Text = "No se ha podido agregar la asignatura";
+                    //lblError.Text = "No se ha podido agregar la asignatura";
+                    //lblError.Visible = true;
+                    //btnVolverEditar.Visible = true;
+                
                 //divAsig.Visible = false;
                 //div1.Visible = true;
 
