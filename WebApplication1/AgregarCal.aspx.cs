@@ -159,11 +159,12 @@ namespace WebApplication1
 
         protected void BtAgregar_Click(object sender, EventArgs e)
         {
-            if(Session["NewCal"] != null && Session["NewCal"].ToString() == RadioButtonList1.SelectedValue + RadioButtonList2.SelectedValue)
+            string flag = RadioButtonList1.SelectedValue + RadioButtonList2.SelectedValue;
+            if (Session[flag] != null)
             {
                 Response.Redirect("Profesores");
             }
-            Session["NewCal"] = RadioButtonList1.SelectedValue + RadioButtonList2.SelectedValue;
+            Session[flag] = RadioButtonList1.SelectedValue + RadioButtonList2.SelectedValue;
 
             InsertCal((int)ViewState["valorCal"]);
             DataUpdate.UpdateDatosEstudiante(RadioButtonList2.SelectedValue);
