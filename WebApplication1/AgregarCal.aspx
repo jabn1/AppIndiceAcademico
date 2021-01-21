@@ -23,7 +23,7 @@
         </h4> 
         <asp:RadioButtonList ID="RadioButtonList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="RadioButtonList2_SelectedIndexChanged" ></asp:RadioButtonList> <p></p>
         <asp:Button ID="btElegirEst" runat="server" Text="Elegir Estudiante" OnClick="btElegirEst_Click" Width="200px" /> <p></p>
-    <asp:Button ID="btRetAsig" runat="server" Text="Modificar asignatura" OnClick="btRetAsig_Click" Width="200px" /> <p></p>
+    <asp:Button ID="btRetAsig" runat="server" Text="Cambiar asignatura" OnClick="btRetAsig_Click" Width="200px" /> <p></p>
     <asp:Button ID="btCancelarEE" runat="server" Text="Cancelar" OnClick="btCancelar_Click" Width="200px" /> <p></p>
     </div>
 
@@ -32,12 +32,12 @@
 
         <asp:Label ID="lblAsig2" runat="server"></asp:Label> <p></p>
         <asp:Label ID="lblEst" runat="server" ></asp:Label> <p></p>
-        <asp:Label ID="Label1" runat="server" Text="Valor de calificacion:"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Calificacion:"></asp:Label>
         <asp:TextBox ID="tbCal" runat="server" OnTextChanged="tbCal_TextChanged"  ></asp:TextBox>
         <asp:Label ID="lblWarn" runat="server" ForeColor="Red" ></asp:Label>
         <p></p>
         <asp:Button ID="btProcesar" runat="server" Text="Procesar" OnClick="btProcesar_Click" Width="200px" /> <p></p>
-        <asp:Button ID="btRetEst" runat="server" Text="Modificar estudiante" OnClick="btRetEst_Click" Width="200px" /> <p></p>
+        <asp:Button ID="btRetEst" runat="server" Text="Cambiar estudiante" OnClick="btRetEst_Click" Width="200px" /> <p></p>
     <asp:Button ID="btCancelarCal" runat="server" Text="Cancelar" OnClick="btCancelar_Click" Width="200px" /> <p></p>
     </div>
 
@@ -51,7 +51,7 @@
     <p></p>
     <asp:Button ID="BtAgregar" runat="server" Text="Agregar Calificacion" OnClick="BtAgregar_Click" Width="250px"/>     
     <p></p>
-        <asp:Button ID="btRetCal" runat="server" Text="Modificar valor de calificacion" OnClick="btRetCal_Click" Width="250px" />
+        <asp:Button ID="btRetCal" runat="server" Text="Cambiar valor de calificacion" OnClick="btRetCal_Click" Width="250px" />
     <p></p>
         <asp:Button ID="btCancelar" runat="server" Text="Cancelar" OnClick="btCancelar_Click" Width="250px" />
     <p></p>
